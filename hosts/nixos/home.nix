@@ -24,6 +24,8 @@
     "${paths.homeManager}/shell/gitui.nix"
     "${paths.homeManager}/shell/kitty.nix"
     "${paths.homeManager}/shell/fish.nix"
+    "${paths.homeManager}/shell/warp.nix"
+
   ];
 
   nico.git.enable = true;
@@ -37,6 +39,7 @@
 
   nico.fish.enable = true;
   nico.shell-utils.enable = true;
+  nico.warp-terminal.enable = true;
 
   nico.gitui.enable = true;
   nico.kitty.enable = true;
