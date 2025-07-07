@@ -16,7 +16,6 @@
 
     "${paths.homeManager}/vscode/vscode.nix"
 
-    
     "${paths.homeManager}/discord.nix"
 
     "${paths.homeManager}/gnome/gnome.nix"
@@ -41,7 +40,6 @@
 
   nico.gitui.enable = true;
   nico.kitty.enable = true;
-
 
   nico.vscode = {
     enable = true;

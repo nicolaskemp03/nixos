@@ -27,11 +27,6 @@ in
 
     programs.bat.enable = lib.mkDefault true;
 
-    programs.zellij = {
-      enable = lib.mkDefault true;
-      enableFishIntegration = lib.mkDefault true;
-    };
-
     home.packages = with pkgs; [
       dust
       ripgrep
