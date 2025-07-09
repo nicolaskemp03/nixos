@@ -18,6 +18,12 @@ in
 
     services.syncthing = {
       enable = true;
+      settings.devices = {
+        Nico = {
+          id = "YZLC2YX-MZ6Y26L-Y5JT76Y-IQHXQLY-GYULNIN-AWHLBTR-XXWRBGK-N3CPCQO";
+          name = "server";
+        };
+      };
     };
   };
 }
