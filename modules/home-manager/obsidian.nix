@@ -15,5 +15,9 @@ in
       obsidian
       zotero
     ];
+
+    services.syncthing = {
+      enable = true;
+    };
   };
 }
