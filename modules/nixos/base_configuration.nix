@@ -79,7 +79,7 @@ in
 
   programs.command-not-found.dbPath = inputs.programsdb.packages.${pkgs.system}.programs-sqlite;
 
-  programs.ssh.startAgent = mkDefault true;
+  programs.ssh.startAgent = mkDefault false;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = mkDefault true;

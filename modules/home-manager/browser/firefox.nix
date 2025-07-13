@@ -14,7 +14,7 @@ in
   config = lib.mkIf cfg.enable {
     programs.firefox = {
       enable = true;
-      package = pkgs.firefox-esr-128;
+      package = pkgs.firefox;
 
       policies = {
         DisableTelemetry = true;
@@ -170,7 +170,7 @@ in
     };
 
     home.file = {
-      ".mozilla/firefox/${profile}/chrome/userChrome.css".source = ./userChrome.css;
+      #".mozilla/firefox/${profile}/chrome/userChrome.css".source = ./userChrome.css;
       ".mozilla/firefox/${profile}/sidebery-data.json".source = ./sidebery-data.json;
       ".mozilla/firefox/nico/search.json.mozlz4".force = lib.mkForce true;
     };

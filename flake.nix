@@ -10,10 +10,12 @@
 
   inputs = {
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -48,10 +50,7 @@
     {
       self,
       nixpkgs,
-      nur,
-      musnix,
-      agenix,
-      playit-nixos-module,
+      nixpkgs-unstable,
       ...
     }@inputs:
     let
@@ -62,6 +61,17 @@
         nixos = "${self}/modules/nixos";
         homeManager = "${self}/modules/home-manager";
       };
+
+      pkgs-unstable = nixpkgs-unstable.legacyPackages."x86_64-linux";
+
+      overlay-module = {
+        nixpkgs.overlays = [
+          (final: prev: {
+            unstable = pkgs-unstable;
+          })
+        ];
+      };
+
     in
     {
       nixosConfigurations = {
@@ -73,6 +83,7 @@
               ;
           };
           modules = [
+            overlay-module
             ./hosts/nixos/configuration.nix
           ];
         };

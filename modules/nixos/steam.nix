@@ -8,13 +8,12 @@ let
   cfg = config.nico.steam;
 in
 {
-  options.nico.steam.enable = lib.mkEnableOption "Enable Steam.";
+  options.nico.steam.enable = lib.mkEnableOption "Enable Game Software.";
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       protontricks
       mangohud
-
     ];
 
     programs.steam = {

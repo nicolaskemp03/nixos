@@ -16,7 +16,6 @@ in
         withOpenASAR = true;
         withVencord = true;
       })
-      easyeffects
     ];
   };
 }

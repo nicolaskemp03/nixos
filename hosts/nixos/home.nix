@@ -9,12 +9,16 @@
     "${paths.homeManager}/base_configuration.nix"
     "${paths.homeManager}/git.nix"
     "${paths.homeManager}/blender.nix"
+
     "${paths.homeManager}/firacode.nix"
     "${paths.homeManager}/browser/firefox.nix"
     "${paths.homeManager}/libreoffice.nix"
     "${paths.homeManager}/obsidian.nix"
+    "${paths.homeManager}/raysession.nix"
 
     "${paths.homeManager}/vscode/vscode.nix"
+
+    "${paths.homeManager}/davinci.nix"
 
     "${paths.homeManager}/discord.nix"
 
@@ -33,9 +37,11 @@
   nico.blender.enable = false;
   nico.firacode.enable = true;
   nico.firefox.enable = true;
+  #davinci.enable = true;
 
   nico.libreoffice.enable = true;
   nico.obsidian.enable = true;
+  nico.raysession.enable = true;
 
   nico.fish.enable = true;
   nico.shell-utils.enable = true;
