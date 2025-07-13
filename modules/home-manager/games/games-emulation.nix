@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.nico.blender;
+  cfg = config.nico.games.emulation;
 in
 {
-  options.nico.blender.enable = lib.mkEnableOption "Enable Blender.";
+  options.nico.games.emulation.enable = lib.mkEnableOption "Enable Game Emulation.";
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [

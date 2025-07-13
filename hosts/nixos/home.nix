@@ -6,49 +6,63 @@
 }:
 {
   imports = [
+
+    #System
     "${paths.homeManager}/base_configuration.nix"
     "${paths.homeManager}/git.nix"
-    "${paths.homeManager}/blender.nix"
-
-    "${paths.homeManager}/firacode.nix"
-    "${paths.homeManager}/browser/firefox.nix"
-    "${paths.homeManager}/libreoffice.nix"
-    "${paths.homeManager}/obsidian.nix"
-    "${paths.homeManager}/raysession.nix"
-
-    "${paths.homeManager}/vscode/vscode.nix"
-
-    "${paths.homeManager}/davinci.nix"
-
-    "${paths.homeManager}/discord.nix"
-
     "${paths.homeManager}/gnome/gnome.nix"
 
+    #Basic Apps
+    "${paths.homeManager}/browser/firefox.nix"
+    "${paths.homeManager}/discord.nix"
+
+    #Utilities and tools
+    "${paths.homeManager}/obsidian.nix"
+    "${paths.homeManager}/raysession.nix"
+    "${paths.homeManager}/libreoffice.nix"
+    "${paths.homeManager}/blender.nix"
+    "${paths.homeManager}/vscode/vscode.nix"
+    "${paths.homeManager}/davinci.nix"
+
+    #Terminal and Coding
     "${paths.homeManager}/shell/utils/shell-utils.nix"
     "${paths.homeManager}/shell/gitui.nix"
     "${paths.homeManager}/shell/kitty.nix"
     "${paths.homeManager}/shell/fish.nix"
     "${paths.homeManager}/shell/warp.nix"
 
+    #Gaming
+    "${paths.homeManager}/games/minecraft.nix"
+    "${paths.homeManager}/games/games-emulation.nix"
+
   ];
 
+  #System
   nico.git.enable = true;
+  nico.gnome.enable = true;
+  nico.gnome.catppuccin.enable = true;
+  #nico.gnome.background.enable = true;
+  #nico.gnome.background.path = "persona_3_blue_down.png";
 
-  nico.blender.enable = false;
-  nico.firacode.enable = true;
+  #Basic Apps
   nico.firefox.enable = true;
-  #davinci.enable = true;
+  nico.discord.enable = true;
+  programs.firefox.enable = true;
 
+  #Utilities and Tools
+  nico.blender.enable = false;
   nico.libreoffice.enable = true;
   nico.obsidian.enable = true;
   nico.raysession.enable = true;
 
+  #Terminal and Coding
   nico.fish.enable = true;
   nico.shell-utils.enable = true;
   nico.warp-terminal.enable = true;
 
   nico.gitui.enable = true;
   nico.kitty.enable = true;
+  nico.firacode.enable = true;
 
   nico.vscode = {
     enable = true;
@@ -60,14 +74,10 @@
     #vim = true;
   };
 
-  nico.discord.enable = true;
-
-  nico.gnome.enable = true;
-  nico.gnome.catppuccin.enable = true;
-  #nico.gnome.background.enable = true;
-  #nico.gnome.background.path = "persona_3_blue_down.png";
-
-  programs.firefox.enable = true;
+  #Gaming
+  nico.games.minecraft.enable = true;
+  nico.games.emulation.enable = true;
+  #davinci.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
