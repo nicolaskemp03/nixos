@@ -20,7 +20,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    nico.btop.enable = lib.mkDefault true;
+    #nico.btop.enable = lib.mkDefault true;
     nico.eza.enable = lib.mkDefault true;
     nico.tldr.enable = lib.mkDefault true;
     nico.zoxide.enable = lib.mkDefault true;

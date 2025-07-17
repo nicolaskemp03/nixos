@@ -104,6 +104,7 @@
     pkgs.finamp
     pkgs.ente-auth
     pkgs.pavucontrol
+    pkgs.mission-center
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
