@@ -15,6 +15,8 @@
     #Basic Apps
     "${paths.homeManager}/browser/firefox.nix"
     "${paths.homeManager}/discord.nix"
+    "${paths.homeManager}/flatpak.nix"
+    "${paths.homeManager}/rofi.nix"
 
     #Utilities and tools
     "${paths.homeManager}/obsidian.nix"
@@ -48,6 +50,8 @@
   nico.firefox.enable = true;
   nico.discord.enable = true;
   programs.firefox.enable = true;
+  nico.flatpak.enable = true;
+  nico.rofi.enable = true;
 
   #Utilities and Tools
   nico.blender.enable = false;
@@ -77,7 +81,7 @@
   #Gaming
   nico.games.minecraft.enable = true;
   nico.games.emulation.enable = true;
-  #davinci.enable = true;
+  davinci.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -98,6 +102,8 @@
   home.packages = [
     pkgs.qbittorrent
     pkgs.finamp
+    pkgs.ente-auth
+    pkgs.pavucontrol
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello

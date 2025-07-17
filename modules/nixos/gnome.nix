@@ -37,6 +37,8 @@ in
 
     environment.systemPackages = with pkgs; [
       xwayland-run
+      gnomeExtensions.appindicator
     ];
+    services.udev.packages = [ pkgs.gnome-settings-daemon ];
   };
 }

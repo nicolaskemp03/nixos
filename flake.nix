@@ -62,7 +62,10 @@
         homeManager = "${self}/modules/home-manager";
       };
 
-      pkgs-unstable = nixpkgs-unstable.legacyPackages."x86_64-linux";
+      pkgs-unstable = import nixpkgs-unstable {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
 
       overlay-module = {
         nixpkgs.overlays = [
@@ -81,6 +84,7 @@
               inputs
               paths
               ;
+            pkgs-unstable = pkgs-unstable;
           };
           modules = [
             overlay-module

@@ -7,6 +7,7 @@
   pkgs,
   inputs,
   paths,
+  pkgs-unstable,
   ...
 }:
 {
@@ -29,13 +30,38 @@
   nico.podman.enable = true;
   nico.steam.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    nanorc
-  ];
+  environment.systemPackages =
+    with pkgs;
+    [
+      nanorc
+      clinfo
+      pulseaudio
+      alsa-utils
+      pipewire
+    ]
+    ++ (with pkgs-unstable; [
+      rocmPackages.clr.icd
+    ]);
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true; # Still good practice for proprietary apps
+  };
+
+  services.xserver = {
+    enable = true;
+    # ... other xserver settings like layout ...
+    videoDrivers = [ "amdgpu" ]; # Ensure 'amdgpu' is listed here
+  };
+
+  hardware.opengl.extraPackages = with pkgs; [
+    rocmPackages.clr.icd # Add it here too, ensuring the OpenCL ICD is linked correctly for the driver
+    # Also potentially `rocmPackages.clr` if `icd` isn't enough, but `icd` is usually the one.
+  ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -51,19 +77,17 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
     jack.enable = true;
 
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
+    wireplumber = {
+      enable = true;
+    };
   };
 
   # <https://wiki.nixos.org/wiki/PipeWire#Low-latency_setup>
@@ -76,11 +100,40 @@
     };
   };
 
+  # https://nixos.wiki/wiki/PipeWire#PulseAudio_backend
+  #Use pipewire for pulseaudio stuff
+  services.pipewire.extraConfig.pipewire-pulse."92-low-latency" = {
+    context.modules = [
+      {
+        name = "libpipewire-module-protocol-pulse";
+        args = {
+          pulse.min.req = "32/48000";
+          pulse.default.req = "32/48000";
+          pulse.max.req = "32/48000";
+          pulse.min.quantum = "32/48000";
+          pulse.max.quantum = "32/48000";
+        };
+      }
+    ];
+    stream.properties = {
+      node.latency = "32/48000";
+      resample.quality = 1;
+    };
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
   musnix.enable = true;
   users.users.nico.extraGroups = [ "audio" ];
+
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs paths; };
