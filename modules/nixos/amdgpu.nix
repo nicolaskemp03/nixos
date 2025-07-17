@@ -31,8 +31,8 @@ in
         "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
       ];
 
-    environment.systemPackages = [ pkgs.lact ];
-    systemd.packages = [ pkgs.lact ];
+    #environment.systemPackages = [ pkgs.lact ];
+    #systemd.packages = [ pkgs.lact ];
     systemd.services.lactd.wantedBy = [ "multi-user.target" ];
   };
 }
