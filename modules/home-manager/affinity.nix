@@ -1,0 +1,19 @@
+{
+  config,
+  pkgs,
+  lib,
+  affinity-nix,
+  ...
+}:
+let
+  cfg = config.nico.affinity;
+in
+{
+  options.nico.affinity.enable = lib.mkEnableOption "Enable Affinity Suite.";
+
+  config = lib.mkIf cfg.enable {
+    home.packages = [
+      affinity-nix.packages.x86_64-linux.photo
+    ];
+  };
+}
