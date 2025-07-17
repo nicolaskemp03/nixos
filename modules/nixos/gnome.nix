@@ -32,6 +32,13 @@ in
         iagno # go game
         hitori # sudoku game
         atomix # puzzle game
+        gnome-console
+        gnome-logs
+        gnome-system-monitor
+        gnome-weather
+        gnome-connections
+        snapshot
+        yelp
       ]
     );
 
