@@ -25,6 +25,7 @@
     "${paths.homeManager}/blender.nix"
     "${paths.homeManager}/vscode/vscode.nix"
     "${paths.homeManager}/davinci.nix"
+    "${paths.homeManager}/affinity.nix"
 
     #Terminal and Coding
     "${paths.homeManager}/shell/utils/shell-utils.nix"
@@ -58,6 +59,8 @@
   nico.libreoffice.enable = true;
   nico.obsidian.enable = true;
   nico.raysession.enable = true;
+  davinci.enable = true;
+  nico.affinity.enable = true;
 
   #Terminal and Coding
   nico.fish.enable = true;
@@ -81,7 +84,6 @@
   #Gaming
   nico.games.minecraft.enable = true;
   nico.games.emulation.enable = true;
-  davinci.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

@@ -9,10 +9,14 @@
   };
 
   inputs = {
+    #mrshmllow solution for affinity runing on linux
+    affinity-nix.url = "github:mrshmllow/affinity-nix";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    affinity-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -51,8 +55,12 @@
       self,
       nixpkgs,
       nixpkgs-unstable,
+      affinity-nix,
+      home-manager,
       ...
-    }@inputs:
+    }
+
+    @inputs:
     let
       paths = {
         root = "${self}";
@@ -91,6 +99,19 @@
             ./hosts/nixos/configuration.nix
           ];
         };
+      };
+      homeConfigurations.nico = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Use your main nixpkgs for Home Manager
+        extraSpecialArgs = {
+          inherit inputs paths pkgs-unstable; # Pass inputs and other useful args
+          # You might not need to pass pkgs-unstable if it's only used in NixOS config,
+          # but passing 'inputs' is key for affinity-nix.
+        };
+        modules = [
+          ./hosts/nixos/home.nix # <--- Your main Home Manager configuration file
+          # Add other top-level Home Manager modules here if you have any.
+          # The individual affinity app enabling will go inside home.nix or a module imported by it.
+        ];
       };
     };
 }
