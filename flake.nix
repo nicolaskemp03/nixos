@@ -9,14 +9,15 @@
   };
 
   inputs = {
-    #mrshmllow solution for affinity runing on linux
-    affinity-nix.url = "github:mrshmllow/affinity-nix";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    affinity-nix.inputs.nixpkgs.follows = "nixpkgs";
+    #mrshmllow solution for affinity runing on linux
+    affinity-nix.url = "github:mrshmllow/affinity-nix";
+
+    #affinity-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
