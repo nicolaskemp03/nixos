@@ -48,6 +48,9 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernel.sysctl = {
+    "abi.vsyscall32" = 1; # Enable vsyscall for 32-bit ABI (important for older programs, but generally good practice)
+  };
 
   #Graphic Drivers
   hardware.opengl = {
@@ -148,6 +151,11 @@
     };
     useGlobalPkgs = true;
   };
+
+  nixpkgs.config.supportedSystems = [
+    "x86_64-linux"
+    "i686-linux"
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
