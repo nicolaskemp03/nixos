@@ -17,7 +17,7 @@
     #mrshmllow solution for affinity runing on linux
     affinity-nix.url = "github:mrshmllow/affinity-nix";
 
-    #affinity-nix.inputs.nixpkgs.follows = "nixpkgs";
+    affinity-nix.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
