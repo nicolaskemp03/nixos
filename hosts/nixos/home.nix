@@ -124,7 +124,11 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-
+  home.sessionVariables = {
+    #EDITOR = "nvim";
+    #BROWSER = "firefox";
+    TERMINAL = "kitty";
+  };
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {

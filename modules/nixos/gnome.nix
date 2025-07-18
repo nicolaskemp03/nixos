@@ -32,7 +32,7 @@ in
         iagno # go game
         hitori # sudoku game
         atomix # puzzle game
-        gnome-console
+        #gnome-console
         gnome-logs
         gnome-system-monitor
         gnome-weather
