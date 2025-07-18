@@ -45,6 +45,8 @@ in
     environment.systemPackages = with pkgs; [
       xwayland-run
       gnomeExtensions.appindicator
+      gnomeExtensions.blur-my-shell
+      gnomeExtensions.just-perfection
     ];
     services.udev.packages = [ pkgs.gnome-settings-daemon ];
   };

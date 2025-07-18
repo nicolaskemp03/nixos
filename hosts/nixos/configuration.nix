@@ -43,10 +43,13 @@
       rocmPackages.clr.icd
     ]);
 
+  #Solution
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  #Graphic Drivers
   hardware.opengl = {
     enable = true;
     driSupport32Bit = true; # Still good practice for proprietary apps
@@ -63,6 +66,7 @@
     # Also potentially `rocmPackages.clr` if `icd` isn't enough, but `icd` is usually the one.
   ];
 
+  #Networking
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -89,6 +93,8 @@
       enable = true;
     };
   };
+
+  # Audio Solutions
 
   # <https://wiki.nixos.org/wiki/PipeWire#Low-latency_setup>
   services.pipewire.extraConfig.pipewire."92-low-latency" = {

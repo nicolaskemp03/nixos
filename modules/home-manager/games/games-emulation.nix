@@ -14,6 +14,8 @@ in
     home.packages = with pkgs; [
       lutris
       heroic
+      wine
+      winetricks
     ];
     programs.lutris.winePackages = "
      [pkgs.wineWowPackages.waylandFull
