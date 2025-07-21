@@ -7,6 +7,12 @@
 let
   cfg = config.nico.firefox;
   profile = "nico";
+  firefox-sidebar = pkgs.fetchFromGitHub {
+    owner = "macleod-ee";
+    repo = "FirefoxSidebar";
+    rev = "a3f9ce26321645ef8f03c6c7a1358dd4abec3e3a";
+    hash = "sha256-6C+ltXuVSH4dZszkI7Bx7FT6P5voiBDbnLrGQINwpf8=";
+  };
 in
 {
   options.nico.firefox.enable = lib.mkEnableOption "Enable Firefox.";
@@ -170,6 +176,7 @@ in
     };
 
     home.file = {
+      ".mozilla/firefox/${profile}/chrome".source = firefox-sidebar;
       #".mozilla/firefox/${profile}/chrome/userChrome.css".source = ./userChrome.css;
       ".mozilla/firefox/${profile}/sidebery-data.json".source = ./sidebery-data.json;
       ".mozilla/firefox/nico/search.json.mozlz4".force = lib.mkForce true;

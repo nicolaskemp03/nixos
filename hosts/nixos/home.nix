@@ -61,7 +61,7 @@
   nico.obsidian.enable = true;
   nico.raysession.enable = true;
   davinci.enable = true;
-  nico.affinity.enable = true;
+  nico.affinity.enable = false;
 
   #Terminal and Coding
   nico.fish.enable = true;
