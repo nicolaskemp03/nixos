@@ -108,6 +108,7 @@
     pkgs.ente-auth
     pkgs.pavucontrol
     pkgs.mission-center
+    pkgs.whatsie
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
