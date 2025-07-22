@@ -14,8 +14,8 @@ in
   config = lib.mkIf cfg.enable {
     programs.rofi = {
       enable = true;
-      theme = "modules/home-manager/rofi/rounded-nord-dark.rasi";
-      #configPath = "modules/home-manager/rofi/config.rasi";
+      theme = "/home/nico/nixos-config/modules/home-manager/rofi/rounded-nord-dark.rasi";
+      #configPath = "/home/nico/nixos-config/modules/home-manager/rofi/config.rasi";
       modes = [
         "drun"
         "run"
