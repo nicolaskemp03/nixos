@@ -54,7 +54,6 @@
   nico.discord.enable = true;
   programs.firefox.enable = true;
   nico.flatpak.enable = true;
-  nico.rofi.enable = true;
 
   #Utilities and Tools
   nico.blender.enable = false;
@@ -88,34 +87,6 @@
   nico.games.emulation.enable = true;
 
   #Rofi
-  programs.rofi = {
-    configPath = "${paths.homeManager}/rofi/config.rasi";
-    modes = [
-      "drun"
-      "run"
-      "calc"
-      "ssh"
-    ];
-    terminal = "/home/nico/.nix-profile/bin/fish";
-    plugins = with pkgs; [
-      rofi-calc
-      rofi-games
-      rofi-obsidian
-    ];
-    extraConfig = {
-      show-icons = true;
-      display-drun = "  apps";
-      display-run = "  term";
-      display-filebrowser = "  files";
-      display-window = "  window";
-      drun-display-format = "{name}";
-      window-format = "{w} · {c} · {t}";
-      hover-select = true;
-      me-select-entry = "MouseSecondary";
-      me-accept-entry = "MousePrimary";
-
-    };
-  };
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
