@@ -25,7 +25,7 @@ in
       enable = true;
 
       iconTheme = {
-        name = "Zafiro-icons";
+        name = "Zafiro-icons-Dark";
         package = pkgs.zafiro-icons;
       };
 
