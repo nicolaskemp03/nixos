@@ -67,7 +67,7 @@ in
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
         name = "rebuild";
-        command = "/home/nico/.nix-profile/share/applications/Rebuild.desktop";
+        command = "kitty -- bash -c \"rebuild ; echo \\\"Press enter to close this window...\\\" ; read ans\"";
         binding = "<Super>r";
       };
     };
