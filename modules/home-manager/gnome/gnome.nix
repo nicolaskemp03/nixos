@@ -25,7 +25,7 @@ in
       enable = true;
 
       iconTheme = {
-        name = "Nordzy";
+        name = "Nordzy-icon";
         package = pkgs.nordzy-icon-theme;
       };
 
