@@ -14,7 +14,7 @@ in
   config = lib.mkIf cfg.enable {
     programs.rofi = {
       enable = true;
-      configPath = "modules/home-manager/rofi/config.rasi";
+      #configPath = "modules/home-manager/rofi/config.rasi";
       modes = [
         "drun"
         "run"
