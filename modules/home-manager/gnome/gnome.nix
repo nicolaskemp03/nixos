@@ -40,8 +40,8 @@ in
       };
 
       "org/gnome/desktop/wm/keybindings" = {
-        switch-input-source = "disabled";
-        switch-input-source-backward = "disabled";
+        switch-input-source = "[]";
+        switch-input-source-backward = "[]";
       };
 
       "org/gnome/settings-daemon/plugins/media-keys" = {

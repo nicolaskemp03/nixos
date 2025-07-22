@@ -3,6 +3,7 @@
   pkgs,
   paths,
   inputs,
+  pkgs-unstable,
   ...
 }:
 {
