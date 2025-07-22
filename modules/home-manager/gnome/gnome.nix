@@ -49,6 +49,7 @@ in
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
         ];
       };
 
@@ -62,6 +63,12 @@ in
         name = "rofi";
         command = "rofi -normal-window -show combi -combi-modes \"window,drun,run\" -modes combi";
         binding = "<Super>space";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+        name = "rebuild";
+        command = "/home/nico/.nix-profile/share/applications/Rebuild.desktop";
+        binding = "<Super>r";
       };
     };
   };

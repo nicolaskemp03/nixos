@@ -18,7 +18,7 @@
     "${paths.homeManager}/browser/firefox.nix"
     "${paths.homeManager}/discord.nix"
     "${paths.homeManager}/flatpak.nix"
-    "${paths.homeManager}/rofi.nix"
+    "${paths.homeManager}/rofi/rofi.nix"
 
     #Utilities and tools
     "${paths.homeManager}/obsidian.nix"
