@@ -89,6 +89,7 @@
 
   #Rofi
   programs.rofi = {
+    configPath = "${paths.homeManager}/rofi/config.rasi";
     modes = [
       "drun"
       "run"
