@@ -23,6 +23,17 @@ in
 
     gtk = {
       enable = true;
+
+      iconTheme = {
+        name = "Nordzy";
+        package = pkgs.nordzy-icon-theme;
+      };
+
+      cursorTheme = {
+        name = "";
+        package = pkgs.afterglow-cursors-recolored;
+      };
+
       theme = {
         name = "Graphite";
         package = pkgs.graphite-gtk-theme.override {
