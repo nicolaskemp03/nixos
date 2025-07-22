@@ -38,6 +38,31 @@ in
         #sleep-inactive-ac-type = "nothing";
         #sleep-inactive-battery-type = "nothing";
       };
+
+      "org/gnome/desktop/wm/keybindings" = {
+        switch-input-source = "disabled";
+        switch-input-source-backward = "disabled";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys" = {
+        home = [ "<Super>e" ];
+        custom-keybindings = [
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+        ];
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+        name = "kitty";
+        command = "kitty";
+        binding = "<Super>t";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        name = "rofi";
+        command = "rofi -normal-window -show combi -combi-modes \"window,drun,run\" -modes combi";
+        binding = "<Super>space";
+      };
     };
   };
 }
