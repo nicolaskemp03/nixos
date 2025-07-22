@@ -56,8 +56,9 @@ in
         just-perfection
         fuzzy-app-search
         logo-menu
-        gdeej
+        quick-settings-tweaker
         clipboard-indicator
+        forge
       ]);
     services.udev.packages = [ pkgs.gnome-settings-daemon ];
   };
