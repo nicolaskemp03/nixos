@@ -45,12 +45,18 @@ in
     services.xserver.excludePackages = [ pkgs.xterm ];
     services.xserver.desktopManager.xterm.enable = false;
 
-    environment.systemPackages = with pkgs; [
-      xwayland-run
-      gnomeExtensions.appindicator
-      gnomeExtensions.blur-my-shell
-      gnomeExtensions.just-perfection
-    ];
+    environment.systemPackages =
+      with pkgs;
+      [
+        xwayland-run
+      ]
+      ++ (with pkgs.gnomeExtensions; [
+        appindicator
+        blur-my-shell
+        just-perfection
+        fuzzy-app-search
+        logo-menu
+      ]);
     services.udev.packages = [ pkgs.gnome-settings-daemon ];
   };
 }
