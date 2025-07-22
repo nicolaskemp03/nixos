@@ -42,6 +42,9 @@ in
       ]
     );
 
+    services.xserver.excludePackages = [ pkgs.xterm ];
+    services.xserver.desktopManager.xterm.enable = false;
+
     environment.systemPackages = with pkgs; [
       xwayland-run
       gnomeExtensions.appindicator
