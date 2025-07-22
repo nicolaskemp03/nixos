@@ -22,11 +22,18 @@ in
     ];
 
     dconf.settings = {
+
+      #Gnome Theming
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
         enable-hot-corners = false;
       };
 
+      "org/gnome/shell/extensions/user-theme" = {
+        #name = "";
+      };
+
+      #Peripherals
       "org/gnome/desktop/peripherals/touchpad" = {
         click-method = "areas";
         tap-to-click = true;
@@ -39,7 +46,9 @@ in
         #sleep-inactive-battery-type = "nothing";
       };
 
+      #Shortcuts
       "org/gnome/desktop/wm/keybindings" = {
+        # Erasing super + space shortcuts
         switch-input-source = [ ];
         switch-input-source-backward = [ ];
       };
