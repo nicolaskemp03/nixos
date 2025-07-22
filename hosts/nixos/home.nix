@@ -54,6 +54,7 @@
   nico.discord.enable = true;
   programs.firefox.enable = true;
   nico.flatpak.enable = true;
+  nico.rofi.enable = true;
 
   #Utilities and Tools
   nico.blender.enable = false;
@@ -85,8 +86,6 @@
   #Gaming
   nico.games.minecraft.enable = true;
   nico.games.emulation.enable = true;
-
-  #Rofi
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
