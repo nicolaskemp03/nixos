@@ -109,6 +109,7 @@
     pkgs.pavucontrol
     pkgs.mission-center
     pkgs.whatsie
+    pkgs.droidcam
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
