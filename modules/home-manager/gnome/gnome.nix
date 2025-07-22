@@ -25,8 +25,8 @@ in
       enable = true;
 
       iconTheme = {
-        name = "Nordzy-icon";
-        package = pkgs.nordzy-icon-theme;
+        name = "Zafiro-icons";
+        package = pkgs.zafiro-icons;
       };
 
       cursorTheme = {
