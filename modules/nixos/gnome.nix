@@ -57,6 +57,7 @@ in
         fuzzy-app-search
         logo-menu
         gdeej
+        clipboard-indicator
       ]);
     services.udev.packages = [ pkgs.gnome-settings-daemon ];
   };
