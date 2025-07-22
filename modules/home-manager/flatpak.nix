@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  nix-flatpak,
   ...
 }:
 let
@@ -15,8 +16,8 @@ in
   options.nico.flatpak.enable = lib.mkEnableOption "Enable Flatpak.";
 
   config = lib.mkIf cfg.enable {
+
     home.packages = with pkgs; [
-      flatpak
       gnome-software
     ];
   };

@@ -8,6 +8,7 @@
   inputs,
   paths,
   pkgs-unstable,
+  nix-flatpak,
   ...
 }:
 {
@@ -43,6 +44,14 @@
       rocmPackages.clr.icd
     ]);
 
+  services.flatpak.enable = true;
+  services.flatpak.packages = [
+    {
+      appId = "com.brave.Browser";
+      origin = "flathub";
+    }
+    "com.dec05eba.gpu_screen_recorder"
+  ];
   #Solution
 
   # Bootloader.

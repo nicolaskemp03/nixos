@@ -19,6 +19,9 @@
 
     #affinity-nix.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
+    #nix-flatpak
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -58,6 +61,7 @@
       nixpkgs-unstable,
       affinity-nix,
       home-manager,
+      nix-flatpak,
       ...
     }
 
@@ -96,6 +100,7 @@
             pkgs-unstable = pkgs-unstable;
           };
           modules = [
+            nix-flatpak.nixosModules.nix-flatpak
             overlay-module
             ./hosts/nixos/configuration.nix
           ];
@@ -105,10 +110,9 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Use your main nixpkgs for Home Manager
         extraSpecialArgs = {
           inherit inputs paths pkgs-unstable; # Pass inputs and other useful args
-          # You might not need to pass pkgs-unstable if it's only used in NixOS config,
-          # but passing 'inputs' is key for affinity-nix.
         };
         modules = [
+
           ./hosts/nixos/home.nix # <--- Your main Home Manager configuration file
           # Add other top-level Home Manager modules here if you have any.
           # The individual affinity app enabling will go inside home.nix or a module imported by it.
