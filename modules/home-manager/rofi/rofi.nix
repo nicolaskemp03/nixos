@@ -16,12 +16,6 @@ in
       enable = true;
       theme = "/home/nico/nixos-config/modules/home-manager/rofi/rounded-nord-dark.rasi";
       #configPath = "/home/nico/nixos-config/modules/home-manager/rofi/config.rasi";
-      modes = [
-        "drun"
-        "run"
-        "calc"
-        "ssh"
-      ];
       terminal = "/home/nico/.nix-profile/bin/fish";
       plugins = with pkgs; [
         rofi-calc
@@ -34,6 +28,7 @@ in
         display-run = "  term";
         display-filebrowser = "  files";
         display-window = "  window";
+        display-calc = "+math";
         drun-display-format = "{name}";
         window-format = "{w} · {c} · {t}";
         hover-select = true;
