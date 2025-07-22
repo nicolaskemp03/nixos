@@ -30,7 +30,7 @@ in
       };
 
       cursorTheme = {
-        name = "";
+        name = "Afterglow-cursors";
         package = pkgs.afterglow-cursors-recolored;
       };
 
