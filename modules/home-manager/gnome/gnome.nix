@@ -21,6 +21,14 @@ in
       pkgs.dconf2nix
     ];
 
+    gtk = {
+      enable = true;
+      theme = {
+        name = "Graphite";
+        package = pkgs.graphite-gtk-theme;
+      };
+    };
+
     dconf.settings = {
 
       #Gnome Theming
@@ -30,7 +38,7 @@ in
       };
 
       "org/gnome/shell/extensions/user-theme" = {
-        #name = "";
+        name = "Graphite";
       };
 
       #Peripherals
@@ -78,6 +86,12 @@ in
         name = "rebuild";
         command = "kitty -- bash -c \"rebuild ; echo \\\"Press enter to close this window...\\\" ; read ans\"";
         binding = "<Super>r";
+      };
+
+      #Extension enabling
+      "org/gnome/shell" = {
+        disable-user-extension = false;
+        enabled-extensions = [ "user-theme@gnome-shell-extensions.gcampax.github.com" ];
       };
     };
   };

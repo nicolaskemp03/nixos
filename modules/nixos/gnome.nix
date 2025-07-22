@@ -59,6 +59,7 @@ in
         quick-settings-tweaker
         clipboard-indicator
         forge
+        user-themes
       ]);
     services.udev.packages = [ pkgs.gnome-settings-daemon ];
   };
