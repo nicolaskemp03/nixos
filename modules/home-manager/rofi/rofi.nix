@@ -38,7 +38,7 @@ in
         hover-select = true;
         me-select-entry = "MouseSecondary";
         me-accept-entry = "MousePrimary";
-
+        normal-window = true;
       };
     };
   };
