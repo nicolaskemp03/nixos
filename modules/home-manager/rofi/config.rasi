@@ -1,13 +1,1 @@
-configuration {
-    modi:                       "drun,run,filebrowser";
-    show-icons:                 true;
-    display-drun:               "  apps";
-    display-run:                "  term";
-    display-filebrowser:        "  files";
-    display-window:             "  window";
-    drun-display-format:        "{name}";
-    window-format:              "{w} · {c} · {t}";
-    hover-select:               true;
-    me-select-entry:            "MouseSecondary";
-    me-accept-entry:            "MousePrimary";
-}
+/nix/store/agh5nxyjh3hkmfwmjgqh6hv4nf9q3cl6-home-manager-files/nixos-config/modules/home-manager/rofi/config.rasi
