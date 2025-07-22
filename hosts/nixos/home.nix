@@ -18,7 +18,6 @@
     #Basic Apps
     "${paths.homeManager}/browser/firefox.nix"
     "${paths.homeManager}/discord.nix"
-    "${paths.homeManager}/flatpak.nix"
     "${paths.homeManager}/rofi/rofi.nix"
 
     #Utilities and tools
@@ -54,7 +53,6 @@
   nico.firefox.enable = true;
   nico.discord.enable = true;
   programs.firefox.enable = true;
-  nico.flatpak.enable = true;
   nico.rofi.enable = true;
 
   #Utilities and Tools

@@ -39,12 +39,14 @@
       pulseaudio
       alsa-utils
       pipewire
+      gnome-software # flatpak software
     ]
     ++ (with pkgs-unstable; [
       rocmPackages.clr.icd
     ]);
 
   services.flatpak.enable = true;
+  #Flatpak packages to be installed
   services.flatpak.packages = [
     {
       appId = "com.brave.Browser";
