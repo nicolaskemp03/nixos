@@ -56,7 +56,7 @@ in
         just-perfection
         fuzzy-app-search
         logo-menu
-        quick-settings-tweaker
+        #quick-settings-tweaker #search for a replacement volume mixer
         clipboard-indicator
         forge
         user-themes

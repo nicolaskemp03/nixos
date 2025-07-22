@@ -25,7 +25,10 @@ in
       enable = true;
       theme = {
         name = "Graphite";
-        package = pkgs.graphite-gtk-theme;
+        package = pkgs.graphite-gtk-theme.override {
+          tweaks = [ "nord" ];
+          themeVariants = [ "purple" ];
+        };
       };
     };
 
@@ -91,7 +94,15 @@ in
       #Extension enabling
       "org/gnome/shell" = {
         disable-user-extension = false;
-        enabled-extensions = [ "user-theme@gnome-shell-extensions.gcampax.github.com" ];
+        enabled-extensions = [
+          "user-theme@gnome-shell-extensions.gcampax.github.com"
+          "appindicatorsupport@rgcjonas.gmail.com"
+          "blur-my-shell@aunetx"
+          "clipboard-indicator@tudmotu.com"
+          "gnome-fuzzy-app-search@gnome-shell-extensions.Czarlie.gitlab.com"
+          "just-perfection-desktop@just-perfection"
+          "logomenu@aryan_k"
+        ];
       };
     };
   };
