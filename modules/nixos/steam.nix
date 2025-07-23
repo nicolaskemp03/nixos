@@ -14,7 +14,7 @@ in
     environment.systemPackages = with pkgs; [
       protontricks
       mangohud
-      alvr
+      unstable.alvr
     ];
 
     programs.steam = {
