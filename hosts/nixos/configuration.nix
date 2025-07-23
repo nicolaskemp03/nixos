@@ -72,11 +72,6 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
-  systemd.services.gdm = {
-    #enable = lib.mkForce true;
-    unitConfig.Mask = lib.mkForce null; # Ensure no internal mask directive
-    wantedBy = lib.mkForce [ "graphical.target" ]; # FORCE GDM to be started by the graphical target
-  };
 
   #Graphic Drivers
   hardware.opengl = {
