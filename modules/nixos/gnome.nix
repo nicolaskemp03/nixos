@@ -28,18 +28,39 @@ in
     system.activationScripts.copyGdmMonitorsConfig = {
       deps = [ "specialfs" ];
       text = ''
-        MONITORS_SRC="/home/nico/.config/monitors.xml" # <--- Hardcode your username "nico"
+        set -x # Enable verbose script execution for debugging
+
+        MONITORS_SRC="/home/nico/.config/monitors.xml"
         GDM_CONFIG_DIR="/var/lib/gdm/.config"
         GDM_MONITORS_FILE="$GDM_CONFIG_DIR/monitors.xml"
 
+        echo "--- GDM Monitors.xml Copy Script ---"
+        echo "Attempting to copy monitors.xml for GDM."
+        echo "Source: $MONITORS_SRC"
+        echo "Destination: $GDM_MONITORS_FILE"
+
         if [ -f "$MONITORS_SRC" ]; then
+          echo "Source monitors.xml exists. Content preview (first 10 lines):"
+          cat "$MONITORS_SRC" | head -n 10
+
           mkdir -p "$GDM_CONFIG_DIR"
           cp "$MONITORS_SRC" "$GDM_MONITORS_FILE"
-          chown gdm:gdm "$GDM_MONITORS_FILE"
-          chmod 644 "$GDM_MONITORS_FILE"
-          echo "Copied user's monitors.xml to GDM config."
+
+          if [ $? -eq 0 ]; then
+            echo "monitors.xml copied successfully. Setting permissions."
+            chown gdm:gdm "$GDM_MONITORS_FILE"
+            chmod 644 "$GDM_MONITORS_FILE"
+            echo "Permissions set. Verifying destination content and permissions:"
+            ls -l "$GDM_MONITORS_FILE"
+            cat "$GDM_MONITORS_FILE" | head -n 10
+            echo "--- GDM Monitors.xml Copy Script Success ---"
+          else
+            echo "Error: Failed to copy monitors.xml." >&2
+            echo "--- GDM Monitors.xml Copy Script Failed ---"
+          fi
         else
-          echo "Warning: User's monitors.xml not found at $MONITORS_SRC, GDM might not use preferred display settings." >&2
+          echo "Warning: User's monitors.xml not found at $MONITORS_SRC. GDM might not use preferred display settings." >&2
+          echo "--- GDM Monitors.xml Copy Script Warning ---"
         fi
       '';
     };
