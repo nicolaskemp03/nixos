@@ -22,34 +22,6 @@ in
       };
     };
     services.xserver.desktopManager.gnome.enable = true;
-    services.xserver.config = ''
-      Section "Monitor"
-        Identifier "DP-1" # Replace with the name identified by xrandr (e.g., "DisplayPort-0")
-        Option "PreferredMode" "2560x1440" # Replace with your resolution
-        Option "RefreshRate" "144"
-      EndSection
-
-      Section "Screen"
-        Identifier "Default Screen"
-        Monitor "DP-1" # Must match the Identifier in the Monitor section
-        DefaultDepth 24
-        SubSection "Display"
-          Depth 24
-          Modes "2560x1440@144" # Your resolution and refresh rate
-        EndSubSection
-      EndSection
-
-      Section "Device"
-        Identifier "amdgpu"
-        # You might need to specify your GPU driver here if you have issues, e.g., "nvidia", "amdgpu", "intel"
-        # Driver "nvidia"
-      EndSection
-
-      Section "ServerLayout"
-        Identifier "Default Layout"
-        Screen 0 "Default Screen" 0 0
-      EndSection
-    '';
 
     environment.gnome.excludePackages = (
       with pkgs;
