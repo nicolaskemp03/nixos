@@ -24,8 +24,8 @@ in
       enable = true;
 
       iconTheme = {
-        name = "Zafiro-icons-Dark";
-        package = pkgs.zafiro-icons;
+        name = "Nordzy";
+        package = pkgs.nordzy-icon-theme;
       };
 
       theme = {
