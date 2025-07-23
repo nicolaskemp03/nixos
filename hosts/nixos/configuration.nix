@@ -21,14 +21,14 @@
     inputs.musnix.nixosModules.musnix
     "${paths.nixos}/gnome.nix"
     "${paths.nixos}/obs.nix"
-    #"${paths.nixos}/amdgpu.nix"
+    "${paths.nixos}/amdgpu.nix"
     "${paths.nixos}/podman.nix"
     "${paths.nixos}/steam.nix"
     "${paths.nixos}/virt.nix"
   ];
 
   nico.gnome.enable = true;
-  #nico.amdgpu.enable = true;
+  nico.amdgpu.enable = true;
   nico.obs-studio.enable = true;
   nico.podman.enable = true;
   nico.steam.enable = true;
