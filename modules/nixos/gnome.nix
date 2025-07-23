@@ -26,7 +26,7 @@ in
           Section "Monitor"
         Identifier "DP-1" # Replace with the name identified by xrandr (e.g., "DisplayPort-0")
         Option "PreferredMode" "2560x1440" # Replace with your resolution
-        Option "RefreshRate" "143.87"
+        Option "RefreshRate" "143.97"
       EndSection
 
       Section "Screen"
@@ -35,7 +35,7 @@ in
         DefaultDepth 24
         SubSection "Display"
           Depth 24
-          Modes "2560x1440@143.87" # Your resolution and refresh rate
+          Modes "2560x1440@143.97" # Your resolution and refresh rate
         EndSubSection
       EndSection
 
