@@ -18,15 +18,15 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = [
       pkgs.gnome-tweaks
-      pkgs.dconf2nix
+
     ];
 
     gtk = {
       enable = true;
 
       iconTheme = {
-        name = "Papirus-Dark";
-        package = pkgs.papirus-icon-theme;
+        name = "Zafiro-icons-Dark";
+        package = pkgs.zafiro-icons;
       };
 
       cursorTheme = {
@@ -116,5 +116,6 @@ in
         ];
       };
     };
+
   };
 }
