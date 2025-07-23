@@ -12,8 +12,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
-      (unstable.discord.override {
-        withOpenASAR = true;
+      (discord.override {
         withVencord = true;
       })
     ];
