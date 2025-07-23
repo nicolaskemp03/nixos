@@ -23,6 +23,7 @@
     "${paths.nixos}/amdgpu.nix"
     "${paths.nixos}/podman.nix"
     "${paths.nixos}/steam.nix"
+    "${paths.nixos}/virt.nix"
   ];
 
   nico.gnome.enable = true;
@@ -30,6 +31,7 @@
   nico.obs-studio.enable = true;
   nico.podman.enable = true;
   nico.steam.enable = true;
+  nico.virtualisation.enable = true;
 
   environment.systemPackages =
     with pkgs;
