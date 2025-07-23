@@ -52,6 +52,7 @@ in
   users.users.nico = {
     isNormalUser = true;
     description = "nico";
+    home = "/home/nico";
     extraGroups = [
       "networkmanager"
       "wheel"

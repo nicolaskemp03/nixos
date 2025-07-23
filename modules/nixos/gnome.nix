@@ -23,6 +23,27 @@ in
     };
     services.xserver.desktopManager.gnome.enable = true;
 
+    # This copies your user's monitors.xml to GDM's configuration directory
+    # so GDM uses your preferred resolution/refresh rate from boot.
+    system.activationScripts.copyGdmMonitorsConfig = {
+      deps = [ "specialfs" ];
+      text = ''
+        MONITORS_SRC="/home/nico/.config/monitors.xml" # <--- Hardcode your username "nico"
+        GDM_CONFIG_DIR="/var/lib/gdm/.config"
+        GDM_MONITORS_FILE="$GDM_CONFIG_DIR/monitors.xml"
+
+        if [ -f "$MONITORS_SRC" ]; then
+          mkdir -p "$GDM_CONFIG_DIR"
+          cp "$MONITORS_SRC" "$GDM_MONITORS_FILE"
+          chown gdm:gdm "$GDM_MONITORS_FILE"
+          chmod 644 "$GDM_MONITORS_FILE"
+          echo "Copied user's monitors.xml to GDM config."
+        else
+          echo "Warning: User's monitors.xml not found at $MONITORS_SRC, GDM might not use preferred display settings." >&2
+        fi
+      '';
+    };
+
     environment.gnome.excludePackages = (
       with pkgs;
       [
