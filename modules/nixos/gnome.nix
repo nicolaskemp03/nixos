@@ -14,6 +14,13 @@ in
 
     services.xserver.enable = true;
     services.xserver.displayManager.gdm.enable = true;
+    services.xserver.displayManager.gdm.settings = {
+      "org/gnome/desktop/interface" = {
+        icon-theme = "Zafiro-icons-Dark";
+        cursor-theme = "Afterglow-cursors";
+        gtk-theme = "Graphite";
+      };
+    };
     services.xserver.desktopManager.gnome.enable = true;
 
     environment.gnome.excludePackages = (
