@@ -4,6 +4,7 @@
 
 {
   config,
+  lib,
   pkgs,
   inputs,
   paths,
@@ -58,7 +59,6 @@
     }
     "com.dec05eba.gpu_screen_recorder"
   ];
-  #Solution
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -67,6 +67,13 @@
     "abi.vsyscall32" = 1; # Enable vsyscall for 32-bit ABI (important for older programs, but generally good practice)
   };
 
+  #Gnome & GDM
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  systemd.services.gdm = {
+    unitConfig.Mask = lib.mkForce null; # Ensure no internal mask directive
+    wantedBy = lib.mkForce [ "graphical.target" ]; # FORCE GDM to be started by the graphical target
+  };
   #Graphic Drivers
   hardware.opengl = {
     enable = true;
@@ -87,10 +94,6 @@
   #Networking
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;

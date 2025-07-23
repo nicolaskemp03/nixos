@@ -12,22 +12,9 @@ in
 
   config = lib.mkIf cfg.enable {
 
-    services.xserver.enable = true;
-    services.xserver.displayManager.gdm.enable = true;
-    services.xserver.displayManager.gdm.settings = {
-      "org/gnome/desktop/interface" = {
-        icon-theme = "Zafiro-icons-Dark";
-        cursor-theme = "Afterglow-Recolored-Gruvbox-Purple";
-        gtk-theme = "Graphite";
-      };
-    };
-    services.xserver.desktopManager.gnome.enable = true;
-
     # This copies your user's monitors.xml to GDM's configuration directory
     # so GDM uses your preferred resolution/refresh rate from boot.
 
-    systemd.services.gdm.unitConfig.Mask = lib.mkForce null; # This is the key: force unmask
-    systemd.services.gdm.wantedBy = lib.mkForce [ "graphical.target" ]; # Ensure it's pulled by graphical target
     system.activationScripts.copyGdmMonitorsConfig = {
       deps = [ "specialfs" ];
       text = ''
