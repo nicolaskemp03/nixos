@@ -15,7 +15,7 @@ in
       protontricks
       mangohud
       unstable.alvr
-      wlx-overlay-s
+      unstable.wlx-overlay-s
     ];
 
     programs.steam = {
