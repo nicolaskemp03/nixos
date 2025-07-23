@@ -45,6 +45,7 @@
       gnome-software # flatpak software
       libsForQt5.xp-pen-deco-01-v2-driver
       piper
+      gnome-shell
     ]
     ++ (with pkgs-unstable; [
       rocmPackages.clr.icd
