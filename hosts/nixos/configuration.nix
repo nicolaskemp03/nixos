@@ -92,21 +92,21 @@
   };
 
   #Graphic Drivers
-  hardware.opengl = {
-    enable = true;
-    driSupport32Bit = true; # Still good practice for proprietary apps
-  };
-
   services.xserver = {
     enable = true;
     # ... other xserver settings like layout ...
     videoDrivers = [ "amdgpu" ]; # Ensure 'amdgpu' is listed here
   };
 
-  hardware.opengl.extraPackages = with pkgs; [
-    rocmPackages.clr.icd # Add it here too, ensuring the OpenCL ICD is linked correctly for the driver
-    # Also potentially `rocmPackages.clr` if `icd` isn't enough, but `icd` is usually the one.
-  ];
+  # hardware.opengl = {
+  #   enable = true;
+  #   driSupport32Bit = true; # Still good practice for proprietary apps
+  # };
+
+  # hardware.opengl.extraPackages = with pkgs; [
+  #   rocmPackages.clr.icd # Add it here too, ensuring the OpenCL ICD is linked correctly for the driver
+  #   # Also potentially `rocmPackages.clr` if `icd` isn't enough, but `icd` is usually the one.
+  # ];
 
   #Networking
   networking.hostName = "nixos"; # Define your hostname.
