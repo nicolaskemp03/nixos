@@ -29,7 +29,7 @@ in
       };
 
       cursorTheme = {
-        name = "Afterglow-cursors";
+        name = "Afterglow-Recolored-Gruvbox-Purple";
         package = pkgs.afterglow-cursors-recolored;
       };
 

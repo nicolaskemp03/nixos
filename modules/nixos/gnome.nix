@@ -17,7 +17,7 @@ in
     services.xserver.displayManager.gdm.settings = {
       "org/gnome/desktop/interface" = {
         icon-theme = "Zafiro-icons-Dark";
-        cursor-theme = "Afterglow-cursors";
+        cursor-theme = "Afterglow-Recolored-Gruvbox-Purple";
         gtk-theme = "Graphite";
       };
     };
