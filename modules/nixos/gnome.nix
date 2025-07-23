@@ -25,6 +25,9 @@ in
 
     # This copies your user's monitors.xml to GDM's configuration directory
     # so GDM uses your preferred resolution/refresh rate from boot.
+
+    systemd.services.gdm.unitConfig.Mask = lib.mkForce null; # This is the key: force unmask
+    systemd.services.gdm.wantedBy = lib.mkForce [ "graphical.target" ]; # Ensure it's pulled by graphical target
     system.activationScripts.copyGdmMonitorsConfig = {
       deps = [ "specialfs" ];
       text = ''
