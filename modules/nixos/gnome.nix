@@ -64,5 +64,6 @@ in
         user-themes
       ]);
     services.udev.packages = [ pkgs.gnome-settings-daemon ];
+
   };
 }

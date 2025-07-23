@@ -18,7 +18,6 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = [
       pkgs.gnome-tweaks
-
     ];
 
     gtk = {
