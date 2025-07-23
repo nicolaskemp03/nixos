@@ -16,6 +16,9 @@ in
       heroic
       wine
       winetricks
+      ryujinx
+      cemu
+      rpcs3
     ];
     programs.lutris.winePackages = "
      [pkgs.wineWowPackages.waylandFull

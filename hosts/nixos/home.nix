@@ -44,9 +44,6 @@
   #System
   nico.git.enable = true;
   nico.gnome.enable = true;
-  #nico.gnome.catppuccin.enable = true;
-  #nico.gnome.background.enable = true;
-  #nico.gnome.background.path = "persona_3_blue_down.png";
 
   #Basic Apps
   nico.firefox.enable = true;

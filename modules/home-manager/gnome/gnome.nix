@@ -54,6 +54,11 @@ in
         name = "Graphite";
       };
 
+      "org/gnome/desktop/background" = {
+        picture-uri = "/home/nico/nixos-config/modules/home-manager/gnome/IF_Background_Cachi.jpg";
+        picture-uri-dark = "/home/nico/nixos-config/modules/home-manager/gnome/IF_Background_Cachi.jpg";
+      };
+
       #Peripherals
       "org/gnome/desktop/peripherals/touchpad" = {
         click-method = "areas";
