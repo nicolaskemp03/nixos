@@ -73,69 +73,22 @@
     desktopManager.gnome.enable = true;
   };
   systemd.tmpfiles.rules = [
-    "d ${config.users.users.gdm.home}/.config 0711 gdm gdm"
     "L+ ${config.users.users.gdm.home}/.config/monitors.xml - - - - ${pkgs.writeText "monitors.xml" ''
-      <monitors version="2">
-        <configuration>
-          <layoutmode>physical</layoutmode>
-          <logicalmonitor>
-            <x>4480</x>
-            <y>360</y>
-            <scale>1</scale>
-            <monitor>
-              <monitorspec>
-                <connector>DP-3</connector>
-                <vendor>SAM</vendor>
-                <product>S27F350</product>
-                <serial>H4ZR501285</serial>
-              </monitorspec>
-              <mode>
-                <width>1920</width>
-                <height>1080</height>
-                <rate>60.000</rate>
-              </mode>
-            </monitor>
-          </logicalmonitor>
-          <logicalmonitor>
-            <x>0</x>
-            <y>360</y>
-            <scale>1</scale>
-            <monitor>
-              <monitorspec>
-                <connector>HDMI-1</connector>
-                <vendor>ACR</vendor>
-                <product>Acer V226HQL</product>
-                <serial>LXLAA0194282</serial>
-              </monitorspec>
-              <mode>
-                <width>1920</width>
-                <height>1080</height>
-                <rate>60.000</rate>
-              </mode>
-            </monitor>
-          </logicalmonitor>
-          <logicalmonitor>
-            <x>1920</x>
-            <y>0</y>
-            <scale>1</scale>
-            <primary>yes</primary>
-            <monitor>
-              <monitorspec>
-                <connector>DP-1</connector>
-                <vendor>AUS</vendor>
-                <product>VG27A</product>
-                <serial>R4LMQS059270</serial>
-              </monitorspec>
-              <mode>
-                <width>2560</width>
-                <height>1440</height>
-                <rate>143.972</rate>
-              </mode>
-            </monitor>
-          </logicalmonitor>
-        </configuration>
-      </monitors>    ''}"
+      # Paste your ~/.config/monitors.xml content here
+    ''}"
   ];
+
+  # or copy your user's monitors.xml file in a systemd service
+  systemd.services.gdm-setup-monitors = {
+    before = [ "display-manager.service" ];
+    wantedBy = [ "display-manager.service" ];
+    script = ''
+      if [[ ! -f /home/nico/.config/monitors.xml ]]; then
+        exit 0
+      fi
+      install -g gdm -o gdm /home/nico/.config/monitors.xml "${config.users.users.gdm.home}/.config"
+    '';
+  };
 
   #Graphic Drivers
   hardware.opengl = {
