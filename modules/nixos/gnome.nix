@@ -59,8 +59,9 @@ in
       deps = [ "specialfs" ];
       text = ''
         echo "Clearing GDM dconf cache..."
-        sudo -u gdm dconf reset -f /org/gnome/mutter/display-config/
-        sudo -u gdm dconf reset -f /org/gnome/mutter/displays/
+        # Ensure sudo is in the PATH for this script by referencing its Nix store path
+        ${pkgs.sudo}/bin/sudo -u gdm ${pkgs.dconf}/bin/dconf reset -f /org/gnome/mutter/display-config/
+        ${pkgs.sudo}/bin/sudo -u gdm ${pkgs.dconf}/bin/dconf reset -f /org/gnome/mutter/displays/
         echo "GDM dconf cache cleared."
       '';
     };
