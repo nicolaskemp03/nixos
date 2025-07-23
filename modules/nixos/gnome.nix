@@ -59,13 +59,12 @@ in
       deps = [ "specialfs" ];
       text = ''
         echo "Clearing GDM dconf cache..."
-        # Ensure sudo is in the PATH for this script by referencing its Nix store path
-        ${pkgs.sudo}/bin/sudo -u gdm ${pkgs.dconf}/bin/dconf reset -f /org/gnome/mutter/display-config/
-        ${pkgs.sudo}/bin/sudo -u gdm ${pkgs.dconf}/bin/dconf reset -f /org/gnome/mutter/displays/
+        # Ensure sudo, dconf, AND dbus-launch are in the PATH for this script by referencing their Nix store paths
+        ${pkgs.sudo}/bin/sudo -u gdm ${pkgs.dbus}/bin/dbus-launch ${pkgs.dconf}/bin/dconf reset -f /org/gnome/mutter/display-config/
+        ${pkgs.sudo}/bin/sudo -u gdm ${pkgs.dbus}/bin/dbus-launch ${pkgs.dconf}/bin/dconf reset -f /org/gnome/mutter/displays/
         echo "GDM dconf cache cleared."
       '';
     };
-
     environment.gnome.excludePackages = (
       with pkgs;
       [
