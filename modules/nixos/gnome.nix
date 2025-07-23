@@ -65,6 +65,16 @@ in
       '';
     };
 
+    system.activationScripts.clearGdmDconfCache = {
+      deps = [ "specialfs" ];
+      text = ''
+        echo "Clearing GDM dconf cache..."
+        sudo -u gdm dconf reset -f /org/gnome/mutter/display-config/
+        sudo -u gdm dconf reset -f /org/gnome/mutter/displays/
+        echo "GDM dconf cache cleared."
+      '';
+    };
+
     environment.gnome.excludePackages = (
       with pkgs;
       [
