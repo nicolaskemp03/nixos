@@ -28,11 +28,6 @@ in
         package = pkgs.zafiro-icons;
       };
 
-      cursorTheme = {
-        name = "Afterglow-Recolored-Gruvbox-Purple";
-        package = pkgs.afterglow-cursors-recolored;
-      };
-
       theme = {
         name = "Graphite";
         package = pkgs.graphite-gtk-theme.override {
@@ -40,6 +35,13 @@ in
           themeVariants = [ "purple" ];
         };
       };
+    };
+
+    home.pointerCursor = {
+      gtk.enable = true;
+      name = "Afterglow-Recolored-Gruvbox-Purple";
+      package = pkgs.afterglow-cursors-recolored;
+      size = 24;
     };
 
     dconf.settings = {
