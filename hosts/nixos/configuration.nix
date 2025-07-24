@@ -8,8 +8,6 @@
   pkgs,
   inputs,
   paths,
-  pkgs-unstable,
-  nix-flatpak,
   ...
 }:
 {
@@ -18,7 +16,6 @@
     ./hardware-configuration.nix
     "${paths.nixos}/base_configuration.nix"
     inputs.home-manager.nixosModules.default
-    inputs.musnix.nixosModules.musnix
     "${paths.nixos}/gnome.nix"
     "${paths.nixos}/obs.nix"
     "${paths.nixos}/amdgpu.nix"
@@ -34,23 +31,27 @@
   nico.steam.enable = true;
   nico.virtualisation.enable = true;
 
-  environment.systemPackages =
-    with pkgs;
-    [
-      nanorc
-      clinfo
-      pulseaudio
-      alsa-utils
-      pipewire
-      gnome-software # flatpak software
-      libsForQt5.xp-pen-deco-01-v2-driver
-      piper
-    ]
-    ++ (with pkgs-unstable; [
-      rocmPackages.clr.icd
-    ]);
+  environment.systemPackages = with pkgs; [
+    nanorc
+    clinfo
+    pulseaudio
+    alsa-utils
+    pipewire
+    gnome-software # flatpak software
+    libsForQt5.xp-pen-deco-01-v2-driver
+    piper
+  ];
 
+  #Flatpak Section
   services.flatpak.enable = true;
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
+
   #Flatpak packages to be installed
   services.flatpak.packages = [
     {
@@ -73,11 +74,6 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
-  systemd.tmpfiles.rules = [
-    "L+ ${config.users.users.gdm.home}/.config/monitors.xml - - - - ${pkgs.writeText "monitors.xml" ''
-      # Paste your ~/.config/monitors.xml content here
-    ''}"
-  ];
 
   # or copy your user's monitors.xml file in a systemd service
   systemd.services.gdm-setup-monitors = {
@@ -97,16 +93,6 @@
     # ... other xserver settings like layout ...
     videoDrivers = [ "amdgpu" ]; # Ensure 'amdgpu' is listed here
   };
-
-  # hardware.opengl = {
-  #   enable = true;
-  #   driSupport32Bit = true; # Still good practice for proprietary apps
-  # };
-
-  # hardware.opengl.extraPackages = with pkgs; [
-  #   rocmPackages.clr.icd # Add it here too, ensuring the OpenCL ICD is linked correctly for the driver
-  #   # Also potentially `rocmPackages.clr` if `icd` isn't enough, but `icd` is usually the one.
-  # ];
 
   #Networking
   networking.hostName = "nixos"; # Define your hostname.
@@ -165,19 +151,7 @@
     };
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  musnix.enable = true;
   users.users.nico.extraGroups = [ "audio" ];
-
-  systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs paths; };
