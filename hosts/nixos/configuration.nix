@@ -87,13 +87,6 @@
     '';
   };
 
-  #Graphic Drivers
-  services.xserver = {
-    enable = true;
-    # ... other xserver settings like layout ...
-    videoDrivers = [ "amdgpu" ]; # Ensure 'amdgpu' is listed here
-  };
-
   #Networking
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -117,8 +110,6 @@
       enable = true;
     };
   };
-
-  # Audio Solutions
 
   # <https://wiki.nixos.org/wiki/PipeWire#Low-latency_setup>
   services.pipewire.extraConfig.pipewire."92-low-latency" = {

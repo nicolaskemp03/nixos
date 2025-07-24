@@ -24,6 +24,12 @@ in
       ];
     };
 
+    services.xserver = {
+      enable = true;
+      # ... other xserver settings like layout ...
+      videoDrivers = [ "amdgpu" ]; # Ensure 'amdgpu' is listed here
+    };
+
     systemd.tmpfiles.rules =
       let
         rocmEnv = pkgs.symlinkJoin {
