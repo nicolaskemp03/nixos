@@ -39,8 +39,26 @@ in
       ]
     );
 
-    services.xserver.excludePackages = [ pkgs.xterm ];
-    services.xserver.desktopManager.xterm.enable = false;
+    services.xserver = {
+      excludePackages = [ pkgs.xterm ];
+      displayManager.gdm.enable = true;
+      desktopManager = {
+        gnome.enable = true;
+        xterm.enable = false; # disable xterm
+      };
+    };
+
+    #Fix for display flickering when logging in because of refresh rate changes.
+    systemd.services.gdm-setup-monitors = {
+      before = [ "display-manager.service" ];
+      wantedBy = [ "display-manager.service" ];
+      script = ''
+        if [[ ! -f /home/nico/.config/monitors.xml ]]; then
+          exit 0
+        fi
+        install -g gdm -o gdm /home/nico/.config/monitors.xml "${config.users.users.gdm.home}/.config"
+      '';
+    };
 
     environment.systemPackages =
       with pkgs;

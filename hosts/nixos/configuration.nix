@@ -22,6 +22,7 @@
     "${paths.nixos}/podman.nix"
     "${paths.nixos}/steam.nix"
     "${paths.nixos}/virt.nix"
+    "${paths.nixos}/audio.nix"
   ];
 
   nico.gnome.enable = true;
@@ -30,6 +31,7 @@
   nico.podman.enable = true;
   nico.steam.enable = true;
   nico.virtualisation.enable = true;
+  nico.audio.enable = true;
 
   environment.systemPackages = with pkgs; [
     nanorc
@@ -69,23 +71,7 @@
     "abi.vsyscall32" = 1; # Enable vsyscall for 32-bit ABI (important for older programs, but generally good practice)
   };
 
-  #Gnome & GDM
-  services.xserver = {
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-  };
-
   # or copy your user's monitors.xml file in a systemd service
-  systemd.services.gdm-setup-monitors = {
-    before = [ "display-manager.service" ];
-    wantedBy = [ "display-manager.service" ];
-    script = ''
-      if [[ ! -f /home/nico/.config/monitors.xml ]]; then
-        exit 0
-      fi
-      install -g gdm -o gdm /home/nico/.config/monitors.xml "${config.users.users.gdm.home}/.config"
-    '';
-  };
 
   #Networking
   networking.hostName = "nixos"; # Define your hostname.
@@ -96,53 +82,6 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-
-    wireplumber = {
-      enable = true;
-    };
-  };
-
-  # <https://wiki.nixos.org/wiki/PipeWire#Low-latency_setup>
-  services.pipewire.extraConfig.pipewire."92-low-latency" = {
-    context.properties = {
-      default.clock.rate = 48000;
-      default.clock.quantum = 256;
-      default.clock.min-quantum = 256;
-      default.clock.max-quantum = 256;
-    };
-  };
-
-  # https://nixos.wiki/wiki/PipeWire#PulseAudio_backend
-  #Use pipewire for pulseaudio stuff
-  services.pipewire.extraConfig.pipewire-pulse."92-low-latency" = {
-    context.modules = [
-      {
-        name = "libpipewire-module-protocol-pulse";
-        args = {
-          pulse.min.req = "32/48000";
-          pulse.default.req = "32/48000";
-          pulse.max.req = "32/48000";
-          pulse.min.quantum = "32/48000";
-          pulse.max.quantum = "32/48000";
-        };
-      }
-    ];
-    stream.properties = {
-      node.latency = "32/48000";
-      resample.quality = 1;
-    };
-  };
-
-  users.users.nico.extraGroups = [ "audio" ];
 
   home-manager = {
     extraSpecialArgs = { inherit inputs paths; };
