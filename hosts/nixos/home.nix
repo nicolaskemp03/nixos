@@ -47,8 +47,7 @@
   #Basic Apps
   nico.firefox.enable = true;
   nico.discord.enable = true;
-  programs.firefox.enable = true;
-  nico.rofi.enable = true;
+  #nico.rofi.enable = true;
 
   #Utilities and Tools
   nico.blender.enable = false;
@@ -60,7 +59,7 @@
   #Terminal and Coding
   nico.fish.enable = true;
   nico.shell-utils.enable = true;
-  nico.warp-terminal.enable = true;
+  #nico.warp-terminal.enable = true;
 
   nico.gitui.enable = true;
   nico.kitty.enable = true;
@@ -106,11 +105,6 @@
     pkgs.droidcam
   ];
 
-  home.sessionVariables = {
-    #EDITOR = "nvim";
-    #BROWSER = "firefox";
-    TERMINAL = "kitty";
-  };
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -141,9 +135,11 @@
   #
   #  /etc/profiles/per-user/nico/etc/profile.d/hm-session-vars.sh
   #
-  # home.sessionVariables = {
-  #   EDITOR = "nvim";
-  # };
+  home.sessionVariables = {
+    #EDITOR = "nvim";
+    #BROWSER = "firefox";
+    TERMINAL = "kitty";
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
