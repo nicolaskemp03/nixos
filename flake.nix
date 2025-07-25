@@ -103,8 +103,7 @@
         modules = [
 
           ./hosts/nixos/home.nix # <--- Your main Home Manager configuration file
-          # Add other top-level Home Manager modules here if you have any.
-          # The individual affinity app enabling will go inside home.nix or a module imported by it.
+
         ];
       };
     };

@@ -23,6 +23,7 @@
     "${paths.nixos}/steam.nix"
     "${paths.nixos}/virt.nix"
     "${paths.nixos}/audio.nix"
+    "${paths.nixos}/flatpak.nix"
   ];
 
   nico.gnome.enable = true;
@@ -32,6 +33,7 @@
   nico.steam.enable = true;
   nico.virtualisation.enable = true;
   nico.audio.enable = true;
+  nico.flatpak.enable = true;
 
   environment.systemPackages = with pkgs; [
     nanorc
@@ -44,34 +46,12 @@
     piper
   ];
 
-  #Flatpak Section
-  services.flatpak.enable = true;
-  systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
-
-  #Flatpak packages to be installed
-  services.flatpak.packages = [
-    {
-      appId = "com.brave.Browser";
-      origin = "flathub";
-    }
-    "com.dec05eba.gpu_screen_recorder"
-
-  ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernel.sysctl = {
     "abi.vsyscall32" = 1; # Enable vsyscall for 32-bit ABI (important for older programs, but generally good practice)
   };
-
-  # or copy your user's monitors.xml file in a systemd service
 
   #Networking
   networking.hostName = "nixos"; # Define your hostname.

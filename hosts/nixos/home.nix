@@ -4,7 +4,6 @@
   paths,
   inputs,
   pkgs-unstable,
-  nix-flatpak,
   ...
 }:
 {
