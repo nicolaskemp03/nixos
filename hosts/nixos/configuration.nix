@@ -19,7 +19,6 @@
     "${paths.nixos}/gnome.nix"
     "${paths.nixos}/obs.nix"
     "${paths.nixos}/amdgpu.nix"
-    "${paths.nixos}/podman.nix"
     "${paths.nixos}/steam.nix"
     "${paths.nixos}/virt.nix"
     "${paths.nixos}/audio.nix"
@@ -29,7 +28,6 @@
   nico.gnome.enable = true;
   nico.amdgpu.enable = true;
   nico.obs-studio.enable = true;
-  nico.podman.enable = true;
   nico.steam.enable = true;
   nico.virtualisation.enable = true;
   nico.audio.enable = true;
