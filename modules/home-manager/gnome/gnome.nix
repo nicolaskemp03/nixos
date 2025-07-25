@@ -74,9 +74,15 @@ in
 
       #Shortcuts
       "org/gnome/desktop/wm/keybindings" = {
-        # Erasing super + space shortcuts
+        # Erasing super + space shortcuts and setting other shortcuts
         switch-input-source = [ ];
         switch-input-source-backward = [ ];
+        close = "['<Control>q']";
+      };
+
+      "/org/gnome/shell/keybindings" = {
+        show-screenshot-ui = "['<Shift><Super>s']";
+
       };
 
       "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -85,6 +91,7 @@ in
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
         ];
       };
 
@@ -104,6 +111,12 @@ in
         name = "rebuild";
         command = "kitty -- bash -c \"rebuild ; echo \\\"Press enter to close this window...\\\" ; read ans\"";
         binding = "<Super>r";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+        name = "firefox";
+        command = "firefox";
+        binding = "<Super>f";
       };
 
       #Extension enabling
