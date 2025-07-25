@@ -14,6 +14,8 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = [
       pkgs.gnome-tweaks
+      pkgs.mission-center
+      pkgs.pavucontrol
     ];
 
     gtk = {
