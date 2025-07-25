@@ -8,10 +8,6 @@ let
   cfg = config.nico.gnome;
 in
 {
-  imports = [
-    ./catppuccin.nix
-    ./backgrounds.nix
-  ];
 
   options.nico.gnome.enable = lib.mkEnableOption "Enable GNOME config.";
 
