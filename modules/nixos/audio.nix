@@ -63,5 +63,10 @@ in
 
     users.users.nico.extraGroups = [ "audio" ];
 
+    environment.systemPackages = with pkgs; [
+      pulseaudio
+      alsa-utils
+      pipewire
+    ];
   };
 }

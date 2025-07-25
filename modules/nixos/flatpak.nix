@@ -33,6 +33,8 @@ in
       "com.dec05eba.gpu_screen_recorder"
 
     ];
+
+    environment.systemPackages = [ pkgs.gnome-software ]; # store application for flatpak
   };
 
 }

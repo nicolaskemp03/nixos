@@ -38,10 +38,6 @@
   environment.systemPackages = with pkgs; [
     nanorc
     clinfo
-    pulseaudio
-    alsa-utils
-    pipewire
-    gnome-software # flatpak software
     libsForQt5.xp-pen-deco-01-v2-driver
     piper
   ];
