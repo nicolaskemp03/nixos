@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.nico.games.emulation;
+  cfg = config.nico.games.wine-emulation;
 in
 {
-  options.nico.games.emulation.enable = lib.mkEnableOption "Enable Game Emulation.";
+  options.nico.games.wine-emulation.enable = lib.mkEnableOption "Enable Wine Emulation.";
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
@@ -16,9 +16,6 @@ in
       heroic
       wine
       winetricks
-      ryujinx
-      cemu
-      rpcs3
     ];
     programs.lutris.winePackages = "
      [pkgs.wineWowPackages.waylandFull

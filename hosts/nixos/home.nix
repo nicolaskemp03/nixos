@@ -77,7 +77,7 @@
 
   #Gaming
   nico.games.minecraft.enable = true;
-  nico.games.emulation.enable = true;
+  nico.games.wine-emulation.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = "nico";

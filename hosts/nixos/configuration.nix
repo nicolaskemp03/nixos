@@ -57,17 +57,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    settings = {
-      General = {
-        Enable = "Source,Sink,Media,Socket";
-        Experimental = true;
-      };
-    };
-  };
-
   home-manager = {
     extraSpecialArgs = { inherit inputs paths; };
     users = {
