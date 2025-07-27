@@ -50,10 +50,11 @@ in
         enable-hot-corners = false;
       };
 
-      "org/gnome/shell/extensions/user-theme" = {
-        name = "Graphite";
-      };
-
+      /*
+        "org/gnome/shell/extensions/user-theme" = {
+             name = "Graphite";
+           };
+      */
       "org/gnome/desktop/background" = {
         picture-uri = "/home/nico/nixos-config/modules/home-manager/gnome/IF_Background_Cachi.jpg";
         picture-uri-dark = "/home/nico/nixos-config/modules/home-manager/gnome/IF_Background_Cachi.jpg";
