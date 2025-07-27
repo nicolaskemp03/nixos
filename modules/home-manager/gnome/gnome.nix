@@ -22,8 +22,8 @@ in
       enable = true;
 
       iconTheme = {
-        name = "Nordzy";
-        package = pkgs.nordzy-icon-theme;
+        name = "Zafiro-icons-Dark";
+        package = pkgs.zafiro-icons;
       };
 
       theme = {
@@ -80,10 +80,12 @@ in
         close = "['<Control>q']";
       };
 
-      "/org/gnome/shell/keybindings" = {
-        show-screenshot-ui = "['<Shift><Super>s']";
+      /*
+        "/org/gnome/shell/keybindings" = {
+             show-screenshot-ui = "['<Shift><Super>s']";
 
-      };
+           };
+      */
 
       "org/gnome/settings-daemon/plugins/media-keys" = {
         home = [ "<Super>e" ];
