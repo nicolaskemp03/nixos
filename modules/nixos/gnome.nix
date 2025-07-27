@@ -36,6 +36,7 @@ in
         gnome-connections
         snapshot
         yelp
+        gnome-maps
       ]
     );
 
