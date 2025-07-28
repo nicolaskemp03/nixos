@@ -16,6 +16,7 @@ in
       pkgs.gnome-tweaks
       pkgs.mission-center
       pkgs.pavucontrol
+      pkgs.onedrive
     ];
 
     gtk = {

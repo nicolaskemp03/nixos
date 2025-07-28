@@ -18,7 +18,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     #Nixcord
-    inputs.nixcord = {
+    nixcord = {
       url = "github:kaylorben/nixcord";
     };
 
