@@ -15,7 +15,7 @@ in
       enable = true;
       enable32Bit = true;
       extraPackages = with pkgs; [
-        amdvlk # AMD's official Vulkan ICD
+        unstable.amdvlk # AMD's official Vulkan ICD
         unstable.rocmPackages.clr.icd # For OpenCL
       ];
       extraPackages32 = with pkgs.pkgsi686Linux; [
