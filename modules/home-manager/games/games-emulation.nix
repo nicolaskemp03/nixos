@@ -11,9 +11,9 @@ in
   options.nico.games.wine-emulation.enable = lib.mkEnableOption "Enable Wine Emulation.";
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
+    home.packages = with pkgs.unstable; [
       lutris
-      unstable.heroic
+      heroic
       wine
       winetricks
     ];
