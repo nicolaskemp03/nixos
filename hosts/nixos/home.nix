@@ -100,6 +100,7 @@
     pkgs.ente-auth
     pkgs.whatsie
     pkgs.droidcam
+    pkgs.unstable.warp-terminal
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
