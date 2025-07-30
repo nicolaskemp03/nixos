@@ -13,10 +13,15 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs.unstable; [
       lutris
-      heroic
+      (heroic.override {
+        extraPkgs = pkgs: [
+          pkgs.gamescope
+        ];
+      })
       wine
       winetricks
     ];
+
     programs.lutris.winePackages = "
      [pkgs.wineWowPackages.waylandFull
     ]";
