@@ -59,7 +59,7 @@
   #Terminal and Coding
   nico.fish.enable = true;
   nico.shell-utils.enable = true;
-  #nico.warp-terminal.enable = true;
+  nico.warp-terminal.enable = true;
 
   nico.gitui.enable = true;
   nico.kitty.enable = true;
@@ -100,7 +100,6 @@
     pkgs.ente-auth
     pkgs.whatsie
     pkgs.droidcam
-    pkgs.unstable.warp-terminal
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
