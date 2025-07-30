@@ -16,18 +16,20 @@ in
   options.nico.playit.enable = lib.mkEnableOption "Enable PlayIt.";
 
   config = lib.mkIf cfg.enable {
-    age.secrets.playit = {
-      file = "${paths.secrets}/playit.age";
-      owner = "playit";
-    };
+    /*
+      age.secrets.playit = {
+         file = "${paths.secrets}/playit.age";
+         owner = "playit";
+       };
 
-    services.playit = {
-      enable = true;
-      user = "playit";
-      group = "playit";
-      secretPath = config.age.secrets.playit.path;
-    };
+       services.playit = {
+         enable = true;
+         user = "playit";
+         group = "playit";
+         secretPath = config.age.secrets.playit.path;
+       };
 
-    systemd.services.playit.wantedBy = lib.mkForce [ ];
+       systemd.services.playit.wantedBy = lib.mkForce [ ];
+    */
   };
 }
