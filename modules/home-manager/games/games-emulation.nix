@@ -18,8 +18,6 @@ in
           pkgs.gamescope
         ];
       })
-      wine
-      winetricks
     ];
 
     programs.lutris.winePackages = "

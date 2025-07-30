@@ -15,7 +15,8 @@ in
   config = lib.mkIf cfg.enable {
     programs.zoxide = {
       enable = true;
-    } // (if config.nico.fish.enable then { enableFishIntegration = true; } else { });
+    }
+    // (if config.nico.fish.enable then { enableFishIntegration = true; } else { });
 
     programs.zsh.envExtra = ''alias cd="z"'';
 
