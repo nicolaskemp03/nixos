@@ -18,7 +18,6 @@ in
       wine-staging
       dxvk
       vkd3d-proton
-
       unstable.heroic
     ];
   };

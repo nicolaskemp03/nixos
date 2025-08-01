@@ -40,8 +40,8 @@
     clinfo
     libsForQt5.xp-pen-deco-01-v2-driver
     piper
-    libratbag
   ];
+  services.ratbagd.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
