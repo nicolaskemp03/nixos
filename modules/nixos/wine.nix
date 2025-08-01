@@ -13,7 +13,7 @@ in
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
 
-      wineWowPackages.full
+      wineWowPackages.stable
       winetricks
       wine-staging
       dxvk
