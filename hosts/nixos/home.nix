@@ -40,44 +40,46 @@
 
   ];
 
-  #System
-  nico.git.enable = true;
-  nico.gnome.enable = true;
+  /*
+    #System
+    nico.git.enable = true;
+    nico.gnome.enable = true;
 
-  #Basic Apps
-  nico.firefox.enable = true;
-  nico.discord.enable = true;
-  #nico.rofi.enable = true;
+    #Basic Apps
+    nico.firefox.enable = true;
+    nico.discord.enable = true;
+    #nico.rofi.enable = true;
 
-  #Utilities and Tools
-  nico.blender.enable = false;
-  nico.libreoffice.enable = true;
-  nico.obsidian.enable = true;
-  nico.raysession.enable = true;
-  davinci.enable = true;
+    #Utilities and Tools
+    nico.blender.enable = false;
+    nico.libreoffice.enable = true;
+    nico.obsidian.enable = true;
+    nico.raysession.enable = true;
+    davinci.enable = true;
 
-  #Terminal and Coding
-  nico.fish.enable = true;
-  nico.shell-utils.enable = true;
-  nico.warp-terminal.enable = true;
+    #Terminal and Coding
+    nico.fish.enable = true;
+    nico.shell-utils.enable = true;
+    nico.warp-terminal.enable = true;
 
-  nico.gitui.enable = true;
-  nico.kitty.enable = true;
-  nico.firacode.enable = true;
+    nico.gitui.enable = true;
+    nico.kitty.enable = true;
+    nico.firacode.enable = true;
 
-  nico.vscode = {
-    enable = true;
-    catppuccin = true;
-    firacode = true;
-    #java = true;
-    #js = true;
-    #rust = true;
-    #vim = true;
-  };
+    nico.vscode = {
+      enable = true;
+      catppuccin = true;
+      firacode = true;
+      #java = true;
+      #js = true;
+      #rust = true;
+      #vim = true;
+    };
 
-  #Gaming
-  nico.games.minecraft.enable = true;
-  nico.games.wine-emulation.enable = true;
+    #Gaming
+    nico.games.minecraft.enable = true;
+    nico.games.wine-emulation.enable = true;
+  */
 
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = "nico";
@@ -94,14 +96,15 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    pkgs.qbittorrent
-    pkgs.finamp
-    pkgs.ente-auth
-    pkgs.whatsie
-    pkgs.droidcam
-  ];
-
+  /*
+    home.packages = [
+      pkgs.qbittorrent
+      pkgs.finamp
+      pkgs.ente-auth
+      pkgs.whatsie
+      pkgs.droidcam
+    ];
+  */
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
