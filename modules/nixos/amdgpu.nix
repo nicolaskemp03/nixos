@@ -15,12 +15,12 @@ in
       enable = true;
       enable32Bit = true;
       extraPackages = with pkgs; [
-        #amdvlk # AMD's official Vulkan ICD
+        amdvlk # AMD's official Vulkan ICD
         rocmPackages.clr.icd # For OpenCL
       ];
       extraPackages32 = with pkgs.pkgsi686Linux; [
         # AMDVLK also has a 32-bit version which can be useful
-        #amdvlk
+        amdvlk
       ];
     };
 
@@ -32,6 +32,7 @@ in
       videoDrivers = [ "amdgpu" ]; # Ensure 'amdgpu' is listed here
     };
 
+    # I don't know what this was for and until knowing it it must be here.
     /*
       systemd.tmpfiles.rules =
          let
