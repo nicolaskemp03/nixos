@@ -11,14 +11,12 @@ in
   options.nico.games.wine-emulation.enable = lib.mkEnableOption "Enable Wine Emulation.";
 
   config = lib.mkIf cfg.enable {
-    /*
-      home.packages = with pkgs.unstable; [
-         lutris
-       ];
+    home.packages = with pkgs.unstable; [
+    ];
 
-       programs.lutris.winePackages = "
+    programs.lutris.winePackages = "
         [pkgs.wineWowPackages.waylandFull
        ]";
-    */
+
   };
 }

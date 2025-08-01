@@ -19,6 +19,8 @@ in
       dxvk
       vkd3d-proton
       unstable.heroic
+      lutris
     ];
+
   };
 }
