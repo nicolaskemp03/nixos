@@ -13,11 +13,6 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs.unstable; [
       lutris
-      (heroic.override {
-        extraPkgs = pkgs: [
-          pkgs.gamescope
-        ];
-      })
     ];
 
     programs.lutris.winePackages = "
