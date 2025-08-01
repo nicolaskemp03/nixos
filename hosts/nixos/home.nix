@@ -7,39 +7,40 @@
   ...
 }:
 {
-  imports = [
+  /*
+    imports = [
 
-    #System
-    "${paths.homeManager}/base_configuration.nix"
-    "${paths.homeManager}/git.nix"
-    "${paths.homeManager}/gnome/gnome.nix"
+      #System
+      "${paths.homeManager}/base_configuration.nix"
+      "${paths.homeManager}/git.nix"
+      "${paths.homeManager}/gnome/gnome.nix"
 
-    #Basic Apps
-    "${paths.homeManager}/browser/firefox.nix"
-    "${paths.homeManager}/discord.nix"
-    "${paths.homeManager}/rofi/rofi.nix"
+      #Basic Apps
+      "${paths.homeManager}/browser/firefox.nix"
+      "${paths.homeManager}/discord.nix"
+      "${paths.homeManager}/rofi/rofi.nix"
 
-    #Utilities and tools
-    "${paths.homeManager}/obsidian.nix"
-    "${paths.homeManager}/raysession.nix"
-    "${paths.homeManager}/libreoffice.nix"
-    "${paths.homeManager}/blender.nix"
-    "${paths.homeManager}/vscode/vscode.nix"
-    "${paths.homeManager}/davinci.nix"
+      #Utilities and tools
+      "${paths.homeManager}/obsidian.nix"
+      "${paths.homeManager}/raysession.nix"
+      "${paths.homeManager}/libreoffice.nix"
+      "${paths.homeManager}/blender.nix"
+      "${paths.homeManager}/vscode/vscode.nix"
+      "${paths.homeManager}/davinci.nix"
 
-    #Terminal and Coding
-    "${paths.homeManager}/shell/utils/shell-utils.nix"
-    "${paths.homeManager}/shell/gitui.nix"
-    "${paths.homeManager}/shell/kitty.nix"
-    "${paths.homeManager}/shell/fish.nix"
-    "${paths.homeManager}/shell/warp.nix"
+      #Terminal and Coding
+      "${paths.homeManager}/shell/utils/shell-utils.nix"
+      "${paths.homeManager}/shell/gitui.nix"
+      "${paths.homeManager}/shell/kitty.nix"
+      "${paths.homeManager}/shell/fish.nix"
+      "${paths.homeManager}/shell/warp.nix"
 
-    #Gaming
-    "${paths.homeManager}/games/minecraft.nix"
-    "${paths.homeManager}/games/games-emulation.nix"
+      #Gaming
+      "${paths.homeManager}/games/minecraft.nix"
+      "${paths.homeManager}/games/games-emulation.nix"
 
-  ];
-
+    ];
+  */
   /*
     #System
     nico.git.enable = true;
