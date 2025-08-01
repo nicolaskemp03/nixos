@@ -26,25 +26,22 @@
     "${paths.nixos}/wine.nix"
   ];
 
-  /*
-    nico.gnome.enable = true;
-    nico.amdgpu.enable = true;
-    nico.obs-studio.enable = true;
-    nico.steam.enable = true;
-    nico.wine.enable = true;
-    nico.virtualisation.enable = true;
-    nico.audio.enable = true;
-    nico.flatpak.enable = true;
-
-    environment.systemPackages = with pkgs; [
-      nanorc
-      clinfo
-      libsForQt5.xp-pen-deco-01-v2-driver
-      piper
-    ];
-  */
-  nico.wine.enable = true;
   nico.gnome.enable = true;
+  nico.amdgpu.enable = true;
+  nico.obs-studio.enable = true;
+  nico.steam.enable = true;
+  nico.wine.enable = true;
+  nico.virtualisation.enable = true;
+  nico.audio.enable = true;
+  nico.flatpak.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    nanorc
+    clinfo
+    libsForQt5.xp-pen-deco-01-v2-driver
+    piper
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -62,15 +59,14 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  /*
-    home-manager = {
-      extraSpecialArgs = { inherit inputs paths; };
-      users = {
-        "nico" = import ./home.nix;
-      };
-      useGlobalPkgs = true;
+  home-manager = {
+    extraSpecialArgs = { inherit inputs paths; };
+    users = {
+      "nico" = import ./home.nix;
     };
-  */
+    useGlobalPkgs = true;
+  };
+
   nixpkgs.config.supportedSystems = [
     "x86_64-linux"
     "i686-linux"
