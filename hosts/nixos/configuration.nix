@@ -41,8 +41,10 @@
     libsForQt5.xp-pen-deco-01-v2-driver
     piper
     unrar
+    onedrivegui
   ];
   services.ratbagd.enable = true;
+  services.onedrive.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
