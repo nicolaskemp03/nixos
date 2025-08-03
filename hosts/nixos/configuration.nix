@@ -42,6 +42,7 @@
     piper
     unrar
     onedrivegui
+    unstable.onedrive
   ];
   services.ratbagd.enable = true;
   services.onedrive.enable = true;
