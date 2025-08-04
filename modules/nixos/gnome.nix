@@ -77,6 +77,9 @@ in
         clipboard-indicator
         forge
         user-themes
+        caffeine
+        arcmenu
+        gsconnect
       ]);
     services.udev.packages = [ pkgs.gnome-settings-daemon ];
 
