@@ -30,7 +30,7 @@
   nico.amdgpu.enable = true;
   nico.obs-studio.enable = true;
   nico.steam.enable = true;
-  nico.wine.enable = true;
+  nico.wine.enable = false;
   nico.virtualisation.enable = true;
   nico.audio.enable = true;
   nico.flatpak.enable = true;
