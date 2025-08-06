@@ -24,6 +24,7 @@
     "${paths.nixos}/audio.nix"
     "${paths.nixos}/flatpak.nix"
     "${paths.nixos}/wine.nix"
+    "${paths.nixos}/kde.nix"
   ];
 
   nico.gnome.enable = true;

@@ -1,0 +1,16 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+let
+  cfg = config.nico.kde;
+in
+{
+  options.nico.kde.enable = lib.mkEnableOption "Enable KDE";
+
+  config = lib.mkIf cfg.enable {
+    services.desktopManager.plasma6.enable = true;
+  };
+}
