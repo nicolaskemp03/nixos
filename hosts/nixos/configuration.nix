@@ -43,6 +43,7 @@
     unrar
     onedrivegui
     unstable.onedrive
+    python313Packages.ds4drv
   ];
   services.ratbagd.enable = true;
   services.onedrive.enable = true;
