@@ -28,6 +28,7 @@
   ];
 
   nico.gnome.enable = true;
+  nico.kde.enable = true;
   nico.amdgpu.enable = true;
   nico.obs-studio.enable = true;
   nico.steam.enable = true;
