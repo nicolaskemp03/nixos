@@ -135,7 +135,7 @@
   #  /etc/profiles/per-user/nico/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    #EDITOR = "nvim";
+    #EDITOR = "nano";
     #BROWSER = "firefox";
     TERMINAL = "kitty";
   };

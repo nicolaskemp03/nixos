@@ -90,6 +90,11 @@ in
       "NIX_CONFIG_EDITOR" = "code-nw";
     };
 
+    systemd.user.sessionVariables = {
+      "NIX_CONFIG_EDITOR" = "code-nw";
+
+    };
+
     home.packages = [
       (import "${inputs.self}/derivations/code-nw.nix" { inherit pkgs; })
     ];
