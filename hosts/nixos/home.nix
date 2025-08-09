@@ -49,7 +49,7 @@
   nico.blender.enable = false;
   nico.libreoffice.enable = true;
   nico.obsidian.enable = true;
-  nico.raysession.enable = true;
+  nico.raysession.enable = false;
   davinci.enable = true;
 
   #Terminal and Coding

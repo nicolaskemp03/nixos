@@ -67,6 +67,12 @@ in
       pulseaudio
       alsa-utils
       pipewire
+      easyeffects
+      raysession
+      python313Packages.legacy-cgi
     ];
+
+    hm.services.easyeffects.enable = true;
+
   };
 }

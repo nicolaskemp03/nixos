@@ -6,10 +6,6 @@
 }:
 let
   cfg = config.nico.raysession;
-  #pythonFull = pkgs.python3.withPackages (_: [ ]);
-  #raysessionFixed = pkgs.raysession.overrideAttrs (oldAttrs: {
-  #python311 = pythonFull;
-  #});
 in
 {
   options.nico.raysession.enable = lib.mkEnableOption "Enable Raysession.";
