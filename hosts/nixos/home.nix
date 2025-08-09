@@ -20,7 +20,6 @@
 
     #Utilities and tools
     "${paths.homeManager}/obsidian.nix"
-    "${paths.homeManager}/raysession.nix"
     "${paths.homeManager}/libreoffice.nix"
     "${paths.homeManager}/blender.nix"
     "${paths.homeManager}/vscode/vscode.nix"
@@ -49,7 +48,6 @@
   nico.blender.enable = false;
   nico.libreoffice.enable = true;
   nico.obsidian.enable = true;
-  nico.raysession.enable = false;
   davinci.enable = true;
 
   #Terminal and Coding
