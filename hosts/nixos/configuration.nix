@@ -50,6 +50,8 @@
   ];
   services.ratbagd.enable = true;
   services.onedrive.enable = true;
+  virtualisation.docker.enable = true;
+  users.users.nico.extraGroups = [ "docker" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
