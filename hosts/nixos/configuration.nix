@@ -22,7 +22,6 @@
     "${paths.nixos}/steam.nix"
     "${paths.nixos}/virt.nix"
     "${paths.nixos}/audio.nix"
-    "${paths.nixos}/flatpak.nix"
     "${paths.nixos}/wine.nix"
     "${paths.nixos}/kde.nix"
   ];
@@ -35,7 +34,6 @@
   nico.wine.enable = true;
   nico.virtualisation.enable = true;
   nico.audio.enable = true;
-  nico.flatpak.enable = true;
 
   environment.systemPackages = with pkgs; [
     nanorc
@@ -43,13 +41,12 @@
     libsForQt5.xp-pen-deco-01-v2-driver
     piper
     unrar
-    onedrivegui
-    unstable.onedrive
     python313Packages.ds4drv
     docker
   ];
   services.ratbagd.enable = true;
   services.onedrive.enable = true;
+  services.onedrive.package = pkgs.unstable.onedrive;
   virtualisation.docker.enable = true;
   users.users.nico.extraGroups = [ "docker" ];
 

@@ -12,7 +12,7 @@ in
 
 {
   imports = [
-    (lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "miniluz" ])
+    (lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "nico" ])
     inputs.agenix.nixosModules.default
   ];
 
@@ -59,8 +59,6 @@ in
       "wheel"
       "libvirtd"
     ];
-    packages = with pkgs; [
-    ];
   };
 
   environment.systemPackages = with pkgs; [
@@ -78,8 +76,6 @@ in
     EDITOR = "nano";
     NH_FLAKE = "/home/nico/nixos-config";
   };
-
-  programs.command-not-found.dbPath = inputs.programsdb.packages.${pkgs.system}.programs-sqlite;
 
   programs.ssh.startAgent = mkDefault false;
 
