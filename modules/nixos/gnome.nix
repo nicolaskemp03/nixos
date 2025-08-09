@@ -65,7 +65,8 @@ in
       with pkgs;
       [
         xwayland-run
-        pkgs.dconf2nix
+        dconf2nix
+        gnome-software
       ]
       ++ (with pkgs.gnomeExtensions; [
         appindicator
@@ -82,6 +83,26 @@ in
         gsconnect
       ]);
     services.udev.packages = [ pkgs.gnome-settings-daemon ];
+
+    services.flatpak.enable = true;
+    #flathub repository
+    systemd.services.flatpak-repo = {
+      wantedBy = [ "multi-user.target" ];
+      path = [ pkgs.flatpak ];
+      script = ''
+        flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+      '';
+    };
+
+    #Flatpak packages to be installed
+    services.flatpak.packages = [
+      {
+        appId = "com.brave.Browser";
+        origin = "flathub";
+      }
+      "com.dec05eba.gpu_screen_recorder"
+
+    ];
 
   };
 }

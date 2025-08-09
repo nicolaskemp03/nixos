@@ -12,6 +12,7 @@ in
 
 {
   imports = [
+    (lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "miniluz" ])
     inputs.agenix.nixosModules.default
   ];
 
