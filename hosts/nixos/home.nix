@@ -13,7 +13,6 @@
     #System
     "${paths.homeManager}/base_configuration.nix"
     "${paths.homeManager}/git.nix"
-    "${paths.homeManager}/gnome/gnome.nix"
 
     #Basic Apps
     "${paths.homeManager}/browser/firefox.nix"
@@ -43,7 +42,6 @@
 
   #System
   nico.git.enable = true;
-  nico.gnome.enable = true;
 
   #Basic Apps
   nico.firefox.enable = true;
