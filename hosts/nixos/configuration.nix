@@ -46,6 +46,7 @@
     onedrivegui
     unstable.onedrive
     python313Packages.ds4drv
+    docker
   ];
   services.ratbagd.enable = true;
   services.onedrive.enable = true;

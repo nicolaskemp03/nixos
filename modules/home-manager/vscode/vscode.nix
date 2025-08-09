@@ -48,6 +48,7 @@ in
 
             ms-vsliveshare.vsliveshare
             ms-vscode-remote.remote-ssh
+            ms-vscode-remote.remote-containers
           ])
           ++ (with pkgs.vscode-marketplace; [
             gruntfuggly.todo-tree
