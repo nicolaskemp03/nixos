@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.nico.steam;
+  cfg = config.nico.games;
 in
 {
-  options.nico.steam.enable = lib.mkEnableOption "Enable Game Software.";
+  options.nico.games.enable = lib.mkEnableOption "Enable Game Software.";
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
@@ -16,6 +16,13 @@ in
       mangohud
       unstable.alvr
       unstable.wlx-overlay-s
+      wineWowPackages.stable
+      winetricks
+      wine-staging
+      dxvk
+      vkd3d-proton
+      unstable.heroic
+      lutris
     ];
 
     programs.steam = {

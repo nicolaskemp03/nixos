@@ -17,7 +17,6 @@
     #Basic Apps
     "${paths.homeManager}/browser/firefox.nix"
     "${paths.homeManager}/discord.nix"
-    "${paths.homeManager}/rofi/rofi.nix"
 
     #Utilities and tools
     "${paths.homeManager}/obsidian.nix"
@@ -36,7 +35,6 @@
 
     #Gaming
     "${paths.homeManager}/games/minecraft.nix"
-    "${paths.homeManager}/games/games-emulation.nix"
 
   ];
 
@@ -46,7 +44,6 @@
   #Basic Apps
   nico.firefox.enable = true;
   nico.discord.enable = true;
-  #nico.rofi.enable = true;
 
   #Utilities and Tools
   nico.blender.enable = false;
@@ -76,7 +73,6 @@
 
   #Gaming
   nico.games.minecraft.enable = true;
-  nico.games.wine-emulation.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = "nico";

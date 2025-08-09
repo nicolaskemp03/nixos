@@ -13,13 +13,6 @@ in
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
 
-      wineWowPackages.stable
-      winetricks
-      wine-staging
-      dxvk
-      vkd3d-proton
-      unstable.heroic
-      lutris
     ];
 
   };

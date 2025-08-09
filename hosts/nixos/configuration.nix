@@ -19,7 +19,7 @@
     "${paths.nixos}/gnome.nix"
     "${paths.nixos}/obs.nix"
     "${paths.nixos}/amdgpu.nix"
-    "${paths.nixos}/steam.nix"
+    "${paths.nixos}/games.nix"
     "${paths.nixos}/virt.nix"
     "${paths.nixos}/audio.nix"
     "${paths.nixos}/wine.nix"
@@ -30,7 +30,7 @@
   nico.kde.enable = true;
   nico.amdgpu.enable = true;
   nico.obs-studio.enable = true;
-  nico.steam.enable = true;
+  nico.games.enable = true;
   nico.wine.enable = true;
   nico.virtualisation.enable = true;
   nico.audio.enable = true;
@@ -42,12 +42,8 @@
     piper
     unrar
     python313Packages.ds4drv
-    docker
   ];
   services.ratbagd.enable = true;
-  services.onedrive.enable = true;
-  services.onedrive.package = pkgs.unstable.onedrive;
-  virtualisation.docker.enable = true;
   users.users.nico.extraGroups = [ "docker" ];
 
   # Bootloader.
@@ -79,17 +75,6 @@
     "x86_64-linux"
     "i686-linux"
   ];
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   # List services that you want to enable:
 
