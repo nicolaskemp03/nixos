@@ -69,6 +69,7 @@
       "nico" = import ./home.nix;
     };
     useGlobalPkgs = true;
+    backupFileExtension = "backup";
   };
 
   nixpkgs.config.supportedSystems = [

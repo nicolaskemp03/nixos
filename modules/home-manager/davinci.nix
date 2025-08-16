@@ -16,7 +16,7 @@ let
   xkeyboard_config = pkgs.xkeyboard_config; # For QT_XKB_CONFIG_ROOT
 
   # Define the overridden DaVinci Resolve package here
-  davinciResolveStudioOverridden = pkgs.davinci-resolve-studio.override (old: {
+  davinciResolveStudioOverridden = pkgs.unstable.davinci-resolve-studio.override (old: {
     buildFHSEnv =
       fhs:
       (
