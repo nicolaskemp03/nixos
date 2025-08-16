@@ -73,6 +73,7 @@
         nixpkgs.overlays = [
           (final: prev: {
             unstable = pkgs-unstable;
+            vscode-marketplace = inputs.nix-vscode-extensions.extensions.${prev.system}.vscode-marketplace;
           })
         ];
       };
@@ -96,12 +97,20 @@
         };
       };
       homeConfigurations.nico = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Use your main nixpkgs for Home Manager
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+          overlays = [
+            (final: prev: {
+              unstable = pkgs-unstable;
+              vscode-marketplace = inputs.nix-vscode-extensions.extensions.${prev.system}.vscode-marketplace;
+            })
+          ];
+        };
         extraSpecialArgs = {
           inherit inputs paths pkgs-unstable; # Pass inputs and other useful args
         };
         modules = [
-
           ./hosts/nixos/home.nix # <--- Your main Home Manager configuration file
 
         ];
