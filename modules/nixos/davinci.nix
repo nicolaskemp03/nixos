@@ -70,7 +70,7 @@ in
   options.davinci.enable = lib.mkEnableOption "Enable davinci.";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [
+    environment.systemPackages = [
       davinciResolveStudioOverridden # Use the overridden package here
       pkgs.audacity
     ];

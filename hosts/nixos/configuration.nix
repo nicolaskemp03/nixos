@@ -24,6 +24,8 @@
     "${paths.nixos}/audio.nix"
     "${paths.nixos}/wine.nix"
     "${paths.nixos}/kde.nix"
+    "${paths.nixos}/davinci.nix"
+
   ];
 
   nico.gnome.enable = true;
@@ -34,6 +36,7 @@
   nico.wine.enable = true;
   nico.virtualisation.enable = true;
   nico.audio.enable = true;
+  davinci.enable = true;
 
   environment.systemPackages = with pkgs; [
     nanorc

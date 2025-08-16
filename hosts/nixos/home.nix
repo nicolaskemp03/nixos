@@ -23,7 +23,6 @@
     "${paths.homeManager}/libreoffice.nix"
     "${paths.homeManager}/blender.nix"
     "${paths.homeManager}/vscode/vscode.nix"
-    "${paths.homeManager}/davinci.nix"
 
     #Terminal and Coding
     "${paths.homeManager}/shell/utils/shell-utils.nix"
@@ -48,7 +47,6 @@
   nico.blender.enable = false;
   nico.libreoffice.enable = true;
   nico.obsidian.enable = true;
-  davinci.enable = true;
 
   #Terminal and Coding
   nico.fish.enable = true;
