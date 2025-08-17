@@ -23,6 +23,8 @@ in
       vkd3d-proton
       unstable.heroic
       lutris
+      #Emulation
+      cemu
     ];
 
     programs.steam = {
