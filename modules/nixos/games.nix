@@ -24,7 +24,6 @@ in
       unstable.heroic
       lutris
       #Emulation
-      cemu
     ];
 
     programs.steam = {
