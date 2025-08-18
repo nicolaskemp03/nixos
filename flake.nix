@@ -32,11 +32,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     playit-nixos-module = {
       url = "github:pedorich-n/playit-nixos-module";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -86,6 +81,7 @@
             inherit
               inputs
               paths
+              home-manager
               ;
             pkgs-unstable = pkgs-unstable;
           };
@@ -108,7 +104,12 @@
           ];
         };
         extraSpecialArgs = {
-          inherit inputs paths pkgs-unstable; # Pass inputs and other useful args
+          inherit
+            inputs
+            paths
+            pkgs-unstable
+            home-manager
+            ; # Pass inputs and other useful args
         };
         modules = [
           ./hosts/nixos/home.nix # <--- Your main Home Manager configuration file

@@ -13,10 +13,8 @@ in
 {
   imports = [
     (lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "nico" ])
-    inputs.agenix.nixosModules.default
   ];
 
-  age.identityPaths = [ "/home/nico/.ssh/id_ed25519" ];
   home-manager.backupFileExtension = "backup";
 
   # Enable flakes

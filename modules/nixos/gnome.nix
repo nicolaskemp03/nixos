@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  home-manager,
   ...
 }:
 let
@@ -104,7 +105,7 @@ in
 
     ];
 
-    hm = {
+    home-manager.users.nico = {
       home.packages = [
         pkgs.gnome-tweaks
         pkgs.mission-center
@@ -126,6 +127,14 @@ in
             themeVariants = [ "purple" ];
           };
         };
+      };
+
+      home.activation = {
+        pre-switch-clean = ''
+          echo "Cleaning up conflicting gtkrc-2.0 file..."
+          rm -f ~/.gtkrc-2.0
+          rm -f ~/.gtkrc-2.0.backup
+        '';
       };
 
       home.pointerCursor = {

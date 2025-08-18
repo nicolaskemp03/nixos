@@ -6,19 +6,15 @@
 }:
 {
   imports = [
-    inputs.agenix.homeManagerModules.default
   ];
 
   config = {
 
     home.packages = with pkgs; [
-      inputs.agenix.packages."x86_64-linux".default
       (import "${paths.derivations}/bg-run.nix" { inherit pkgs; })
       trashy
       vlc
     ];
-
-    age.identityPaths = [ "~/.ssh/id_ed25519" ];
 
     xdg.desktopEntries = {
       "Rebuild" = {
