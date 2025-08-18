@@ -22,7 +22,7 @@ in
       zotero
     ];
 
-    services.syncthing = {
+    hm.services.syncthing = {
       enable = true;
       settings = {
         devices = {
