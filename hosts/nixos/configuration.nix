@@ -25,6 +25,7 @@
     "${paths.nixos}/wine.nix"
     "${paths.nixos}/kde.nix"
     "${paths.nixos}/davinci.nix"
+    "${paths.nixos}/productivity.nix"
 
   ];
 
@@ -37,6 +38,7 @@
   nico.virtualisation.enable = true;
   nico.audio.enable = true;
   davinci.enable = true;
+  nico.productivity.enable = true;
 
   environment.systemPackages = with pkgs; [
     nanorc

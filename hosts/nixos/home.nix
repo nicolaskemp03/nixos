@@ -46,7 +46,7 @@
   #Utilities and Tools
   nico.blender.enable = false;
   nico.libreoffice.enable = true;
-  nico.obsidian.enable = true;
+  #nico.obsidian.enable = true;
 
   #Terminal and Coding
   nico.fish.enable = true;
