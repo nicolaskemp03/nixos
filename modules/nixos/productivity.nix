@@ -20,6 +20,8 @@ in
     environment.systemPackages = with pkgs; [
       obsidian
       zotero
+      kdePackages.francis
+      pomodoro-gtk
     ];
 
     hm.services.syncthing = {
