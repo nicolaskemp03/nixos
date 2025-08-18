@@ -49,5 +49,15 @@ in
       };
     };
 
+    #Notification to remind me to work
+    services.cron.enable = true;
+    services.cron.systemCronJobs = [
+
+      "description = \"Daily project reminder\";
+        command = \"notify-send --expire-time=30000 --urgency=critical 'Hora de Proyectos' 'Dedica una hora a tus proyectos de Obsidian.'\";
+        time = \"0 19 * * *\";" # Send the notification at 7:00 PM
+
+    ];
+
   };
 }

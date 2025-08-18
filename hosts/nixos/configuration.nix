@@ -77,8 +77,6 @@
     backupFileExtension = "backup";
   };
 
-  #hm.home.file.".gtkrc-2.0".force = true;
-
   nixpkgs.config.supportedSystems = [
     "x86_64-linux"
     "i686-linux"

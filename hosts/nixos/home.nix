@@ -19,7 +19,6 @@
     "${paths.homeManager}/discord.nix"
 
     #Utilities and tools
-    "${paths.homeManager}/obsidian.nix"
     "${paths.homeManager}/libreoffice.nix"
     "${paths.homeManager}/blender.nix"
     "${paths.homeManager}/vscode/vscode.nix"
@@ -46,7 +45,6 @@
   #Utilities and Tools
   nico.blender.enable = false;
   nico.libreoffice.enable = true;
-  #nico.obsidian.enable = true;
 
   #Terminal and Coding
   nico.fish.enable = true;
