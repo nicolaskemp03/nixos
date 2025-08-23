@@ -47,6 +47,9 @@ in
             (extension "catppuccin-web-file-icons" "{bbb880ce-43c9-47ae-b746-c3e0096c5b76}")
             (extension "styl-us" "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}")
             (extension "enhancer-for-youtube" "enhancerforyoutube@maximerf.addons.mozilla.org")
+            (extension "youtube-addon" "{3c6bf0cc-3ae2-42fb-9993-0d33104fdcaf}")
+            (extension "vidiq-vision-youtube" "firefox@vid.io")
+            (extension "youtube-no-translation" "{9a3104a2-02c2-464c-b069-82344e5ed4ec}")
           ]
           // {
             "*".installation_mode = "blocked";
