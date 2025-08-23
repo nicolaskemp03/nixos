@@ -87,6 +87,7 @@
               inputs
               paths
               home-manager
+              agenix
               ;
             pkgs-unstable = pkgs-unstable;
           };

@@ -23,6 +23,9 @@ in
     "flakes"
   ];
 
+  networking.hosts = {
+    "192.168.95.132" = [ "homeserver.cl" ];
+  };
   # Set timezone
   time.timeZone = mkDefault "America/Santiago";
 

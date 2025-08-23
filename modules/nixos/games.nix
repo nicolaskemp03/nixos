@@ -2,9 +2,11 @@
   config,
   pkgs,
   lib,
+  agenix,
   ...
 }:
 let
+
   cfg = config.nico.games;
 
   protonhax = pkgs.stdenv.mkDerivation {
@@ -26,6 +28,10 @@ let
 in
 {
   options.nico.games.enable = lib.mkEnableOption "Enable Game Software.";
+
+  imports = [
+    agenix.nixosModules.default
+  ];
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
@@ -57,12 +63,16 @@ in
     programs.gamemode.enable = true;
     programs.gamescope.enable = true;
 
-    /*
-      services.playit = {
-         enable = true;
-       };
+    age.secrets.playit-secret = {
+      file = ./secrets/playit-secret.age;
+    };
 
-       hm.home.packages = [ protonhax ];
-    */
+    services.playit = {
+      enable = true;
+      user = "playit";
+      group = "playit";
+      secretPath = config.age.secrets.playit-secret.path;
+    };
+
   };
 }
