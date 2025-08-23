@@ -17,5 +17,6 @@ in
       prismlauncher
       temurin-jre-bin
     ];
+
   };
 }

@@ -88,7 +88,6 @@
     pkgs.qbittorrent
     pkgs.finamp
     pkgs.ente-auth
-    pkgs.whatsie
     pkgs.droidcam
   ];
 

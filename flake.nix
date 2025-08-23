@@ -37,6 +37,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    agenix.url = "github:ryantm/agenix";
+
   };
 
   outputs =
@@ -46,6 +48,8 @@
       nixpkgs-unstable,
       home-manager,
       nix-flatpak,
+      playit-nixos-module,
+      agenix,
       ...
     }
 
@@ -77,6 +81,7 @@
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = {
             inherit
               inputs
@@ -88,7 +93,12 @@
           modules = [
             nix-flatpak.nixosModules.nix-flatpak
             overlay-module
+            playit-nixos-module.nixosModules.default
+            agenix.nixosModules.default
             ./hosts/nixos/configuration.nix
+            {
+              environment.systemPackages = [ agenix.packages.x86_64-linux.default ];
+            }
           ];
         };
       };

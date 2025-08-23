@@ -57,6 +57,12 @@ in
     programs.gamemode.enable = true;
     programs.gamescope.enable = true;
 
-    hm.home.packages = [ protonhax ];
+    /*
+      services.playit = {
+         enable = true;
+       };
+
+       hm.home.packages = [ protonhax ];
+    */
   };
 }
