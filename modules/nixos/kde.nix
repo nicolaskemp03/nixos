@@ -16,6 +16,7 @@ in
     environment.systemPackages = [
       pkgs.libsForQt5.kcolorpicker
       pkgs.deepin.deepin-picker
+      pkgs.wl-color-picker
     ];
   };
 }
