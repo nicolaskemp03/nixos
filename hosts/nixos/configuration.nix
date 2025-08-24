@@ -47,7 +47,6 @@
     piper
     unrar
     python313Packages.ds4drv
-    linuxKernel.packages.linux_6_12.v4l2loopback
     gopro-tool
     ffmpeg
     handbrake
@@ -61,14 +60,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernel.sysctl = {
     "abi.vsyscall32" = 1; # Enable vsyscall for 32-bit ABI (important for older programs, but generally good practice)
-  };
-  boot = {
-    kernelModules = [
-      "v4l2loopback"
-    ];
-    extraModprobeConfig = ''
-      options v4l2loopback devices=2 video_nr=1,2 card_label="OBS Cam, Virt Cam" exclusive_caps=1
-    '';
   };
 
   #Networking
