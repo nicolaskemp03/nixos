@@ -14,7 +14,7 @@ in
     services.desktopManager.plasma6.enable = true;
     programs.ssh.askPassword = lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
     environment.systemPackages = [
-      pkgs.kdePackages.kcolorpicker
+      pkgs.libsForQt5.kcolorpicker
     ];
   };
 }
