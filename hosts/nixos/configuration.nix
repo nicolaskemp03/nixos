@@ -50,6 +50,7 @@
     gopro-tool
     ffmpeg
     handbrake
+    epick
   ];
   services.ratbagd.enable = true;
   users.users.nico.extraGroups = [ "docker" ];
