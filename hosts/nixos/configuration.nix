@@ -50,7 +50,6 @@
     gopro-tool
     ffmpeg
     handbrake
-    wl-color-picker
   ];
   services.ratbagd.enable = true;
   users.users.nico.extraGroups = [ "docker" ];
