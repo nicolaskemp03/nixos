@@ -54,6 +54,7 @@
   ];
   services.ratbagd.enable = true;
   users.users.nico.extraGroups = [ "docker" ];
+  programs.obs-studio.enableVirtualCamera = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
