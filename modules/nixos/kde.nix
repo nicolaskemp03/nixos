@@ -15,6 +15,7 @@ in
     programs.ssh.askPassword = lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
     environment.systemPackages = [
       pkgs.libsForQt5.kcolorpicker
+      pkgs.deepin.deepin-picker
     ];
   };
 }
