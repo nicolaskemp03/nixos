@@ -47,6 +47,8 @@
     piper
     unrar
     python313Packages.ds4drv
+    linuxKernel.packages.linux_xanmod_stable.v4l2loopback
+    gopro-tool
   ];
   services.ratbagd.enable = true;
   users.users.nico.extraGroups = [ "docker" ];
