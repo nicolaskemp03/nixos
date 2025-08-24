@@ -62,12 +62,14 @@
   boot.kernel.sysctl = {
     "abi.vsyscall32" = 1; # Enable vsyscall for 32-bit ABI (important for older programs, but generally good practice)
   };
-  boot.kernelModules = [
-    "v4l2loopback"
-  ];
-  boot.extraModprobeConfig = ''
-    options v4l2loopback nr_devices=2 exclusive_caps=1,1,1,1,1,1,1,1 video_nr=0,1 card_label=v4l2lo0,v4l2lo1
-  '';
+  boot = {
+    kernelModules = [
+      "v4l2loopback"
+    ];
+    extraModprobeConfig = ''
+      options v4l2loopback devices=2 video_nr=1,2 card_label="OBS Cam, Virt Cam" exclusive_caps=1
+    '';
+  };
 
   #Networking
   networking.hostName = "nixos"; # Define your hostname.
