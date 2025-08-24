@@ -47,7 +47,7 @@
     piper
     unrar
     python313Packages.ds4drv
-    linuxKernel.packages.linux_xanmod_stable.v4l2loopback
+    linuxKernel.packages.linux_6_12.v4l2loopback
     gopro-tool
     ffmpeg
     handbrake
@@ -62,6 +62,12 @@
   boot.kernel.sysctl = {
     "abi.vsyscall32" = 1; # Enable vsyscall for 32-bit ABI (important for older programs, but generally good practice)
   };
+  boot.kernelModules = [
+    "v4l2loopback"
+  ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback nr_devices=2 exclusive_caps=1,1,1,1,1,1,1,1 video_nr=0,1 card_label=v4l2lo0,v4l2lo1
+  '';
 
   #Networking
   networking.hostName = "nixos"; # Define your hostname.
