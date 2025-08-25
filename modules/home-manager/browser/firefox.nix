@@ -50,6 +50,7 @@ in
             (extension "youtube-addon" "{3c6bf0cc-3ae2-42fb-9993-0d33104fdcaf}")
             (extension "vidiq-vision-youtube" "firefox@vid.io")
             (extension "youtube-no-translation" "{9a3104a2-02c2-464c-b069-82344e5ed4ec}")
+            (extension "firefox-color" "FirefoxColor@mozilla.com")
           ]
           // {
             "*".installation_mode = "blocked";
