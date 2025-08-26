@@ -17,5 +17,7 @@ in
       pkgs.wl-color-picker
       pkgs.hyprpicker
     ];
+
+    services.displayManager.sddm.enable = true;
   };
 }
