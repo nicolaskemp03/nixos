@@ -8,8 +8,6 @@
 let
   cfg = config.nico.gnome;
 
-  gdmcfg = config.nico.gnome;
-
 in
 {
   options.nico.gnome.enable = lib.mkEnableOption "Enable GNOME and GDE";

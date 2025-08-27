@@ -30,7 +30,7 @@
 
   ];
 
-  nico.gnome.enable = true;
+  nico.gnome.enable = false;
   nico.kde.enable = true;
   nico.amdgpu.enable = true;
   nico.obs-studio.enable = true;
