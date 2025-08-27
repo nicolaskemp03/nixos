@@ -51,6 +51,7 @@ in
             (extension "vidiq-vision-youtube" "firefox@vid.io")
             (extension "youtube-no-translation" "{9a3104a2-02c2-464c-b069-82344e5ed4ec}")
             (extension "firefox-color" "FirefoxColor@mozilla.com")
+            (extension "shortkeys" "Shortkeys@Shortkeys.com")
           ]
           // {
             "*".installation_mode = "blocked";
