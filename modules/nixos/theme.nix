@@ -16,5 +16,6 @@ in
     stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
 
     stylix.autoEnable = true;
+    stylix.targets.qt.enable = true;
   };
 }
