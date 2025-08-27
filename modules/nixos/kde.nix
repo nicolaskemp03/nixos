@@ -17,6 +17,7 @@ in
       pkgs.wl-color-picker
       pkgs.hyprpicker
     ];
+    qt.enable = lib.mkForce false;
 
     services.displayManager.sddm.enable = true;
   };
