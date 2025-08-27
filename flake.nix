@@ -22,6 +22,11 @@
       url = "github:kaylorben/nixcord";
     };
 
+    stylix = {
+      url = "github:nix-community/stylix/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -50,6 +55,7 @@
       nix-flatpak,
       playit-nixos-module,
       agenix,
+      stylix,
       ...
     }
 
@@ -92,6 +98,7 @@
             pkgs-unstable = pkgs-unstable;
           };
           modules = [
+            stylix.nixosModules.stylix
             nix-flatpak.nixosModules.nix-flatpak
             overlay-module
             playit-nixos-module.nixosModules.default
