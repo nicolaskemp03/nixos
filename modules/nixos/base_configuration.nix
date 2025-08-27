@@ -70,6 +70,8 @@ in
     nh
     nil
     appimage-run
+    mission-center
+    pavucontrol
     (import "${paths.derivations}/rebuild.nix" { inherit pkgs; })
     (import "${paths.derivations}/font-cache-update.nix" { inherit pkgs; })
   ];

@@ -44,17 +44,17 @@ in
       ]
     );
 
-    /*
-      services.xserver = {
-         excludePackages = [ pkgs.xterm ];
-         displayManager.gdm.enable = true;
-         desktopManager = {
-           gnome.enable = true;
-           xterm.enable = false; # disable xterm
-         };
-       };
-    */
+    services.xserver = {
+      excludePackages = [ pkgs.xterm ];
+      displayManager.gdm.enable = false;
+      desktopManager = {
+        gnome.enable = true;
+        xterm.enable = false; # disable xterm
+      };
+    };
+
     #Fix for display flickering when logging in because of refresh rate changes.
+
     /*
       systemd.services.gdm-setup-monitors = {
          before = [ "display-manager.service" ];
@@ -113,25 +113,25 @@ in
     home-manager.users.nico = {
       home.packages = [
         pkgs.gnome-tweaks
-        pkgs.mission-center
-        pkgs.pavucontrol
       ];
 
       gtk = {
         enable = true;
 
-        iconTheme = {
-          name = "Zafiro-icons-Dark";
-          package = pkgs.zafiro-icons;
-        };
+        /*
+          iconTheme = {
+                 name = "Zafiro-icons-Dark";
+                 package = pkgs.zafiro-icons;
+               };
 
-        theme = {
-          name = "Graphite";
-          package = pkgs.graphite-gtk-theme.override {
-            tweaks = [ "nord" ];
-            themeVariants = [ "purple" ];
-          };
-        };
+               theme = {
+                 name = "Graphite";
+                 package = pkgs.graphite-gtk-theme.override {
+                   tweaks = [ "nord" ];
+                   themeVariants = [ "purple" ];
+                 };
+               };
+        */
       };
 
       home.activation = {
@@ -142,31 +142,34 @@ in
         '';
       };
 
-      home.pointerCursor = {
-        gtk.enable = true;
-        name = "Afterglow-Recolored-Gruvbox-Purple";
-        package = pkgs.afterglow-cursors-recolored;
-        size = 24;
-      };
-
+      /*
+        home.pointerCursor = {
+             gtk.enable = true;
+             name = "Afterglow-Recolored-Gruvbox-Purple";
+             package = pkgs.afterglow-cursors-recolored;
+             size = 24;
+           };
+      */
       dconf.settings = {
 
         #Gnome Theming
-        "org/gnome/desktop/interface" = {
-          color-scheme = "prefer-dark";
-          enable-hot-corners = false;
-        };
-
+        /*
+          "org/gnome/desktop/interface" = {
+                 color-scheme = "prefer-dark";
+                 enable-hot-corners = false;
+               };
+        */
         /*
           "org/gnome/shell/extensions/user-theme" = {
                name = "Graphite";
              };
         */
-        "org/gnome/desktop/background" = {
-          picture-uri = "/home/nico/nixos-config/modules/home-manager/gnome/IF_Background_Cachi.jpg";
-          picture-uri-dark = "/home/nico/nixos-config/modules/home-manager/gnome/IF_Background_Cachi.jpg";
-        };
-
+        /*
+          "org/gnome/desktop/background" = {
+                 picture-uri = "/home/nico/nixos-config/modules/home-manager/gnome/IF_Background_Cachi.jpg";
+                 picture-uri-dark = "/home/nico/nixos-config/modules/home-manager/gnome/IF_Background_Cachi.jpg";
+               };
+        */
         #Peripherals
         "org/gnome/desktop/peripherals/touchpad" = {
           click-method = "areas";

@@ -12,8 +12,6 @@ in
   imports = [
     ../firacode.nix
     ../direnv.nix
-    ./vscode-catppuccin.nix
-    ./vscode-firacode.nix
     ./vscode-java.nix
     ./vscode-js.nix
     ./vscode-python.nix

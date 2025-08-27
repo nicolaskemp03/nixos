@@ -26,6 +26,7 @@
     "${paths.nixos}/kde.nix"
     "${paths.nixos}/davinci.nix"
     "${paths.nixos}/productivity.nix"
+    "${paths.nixos}/theme.nix"
 
   ];
 
@@ -39,6 +40,7 @@
   nico.audio.enable = true;
   davinci.enable = true;
   nico.productivity.enable = true;
+  nico.theme.enable = true;
 
   environment.systemPackages = with pkgs; [
     nanorc

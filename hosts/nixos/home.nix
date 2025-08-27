@@ -53,12 +53,9 @@
 
   nico.gitui.enable = true;
   nico.kitty.enable = true;
-  nico.firacode.enable = true;
 
   nico.vscode = {
     enable = true;
-    catppuccin = true;
-    firacode = true;
     #java = true;
     #js = true;
     #rust = true;
