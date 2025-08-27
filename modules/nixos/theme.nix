@@ -12,7 +12,7 @@ in
 
   config = lib.mkIf cfg.enable {
 
-    stylix.enable = true;
+    stylix.enable = false;
     stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
 
   };
