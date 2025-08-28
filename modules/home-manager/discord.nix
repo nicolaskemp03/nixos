@@ -17,6 +17,7 @@ in
     home.packages = with pkgs; [
       vesktop
     ];
+    programs.nixcord.enable = true;
 
   };
 }
