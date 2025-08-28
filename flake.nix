@@ -107,6 +107,12 @@
             {
               environment.systemPackages = [ agenix.packages.x86_64-linux.default ];
             }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.sharedModules = [
+                inputs.nixcord.homeModules.nixcord
+              ];
+            }
           ];
         };
       };
@@ -132,9 +138,6 @@
         modules = [
           ./hosts/nixos/home.nix # <--- Your main Home Manager configuration file
 
-        ];
-        home-manager.sharedModules = [
-          inputs.nixcord.homeModules.nixcord
         ];
       };
     };

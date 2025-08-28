@@ -103,6 +103,14 @@
     # '';
   };
 
+  home.activation = {
+    pre-switch-clean = ''
+      echo "Cleaning up conflicting gtkrc-2.0 file..."
+      rm -f ~/.gtkrc-2.0
+      rm -f ~/.gtkrc-2.0.backup
+    '';
+  };
+
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. If you don't want to manage your shell through Home
   # Manager then you have to manually source 'hm-session-vars.sh' located at
