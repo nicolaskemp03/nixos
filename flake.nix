@@ -133,6 +133,9 @@
           ./hosts/nixos/home.nix # <--- Your main Home Manager configuration file
 
         ];
+        home-manager.sharedModules = [
+          inputs.nixcord.homeModules.nixcord
+        ];
       };
     };
 }

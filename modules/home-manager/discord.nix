@@ -14,10 +14,6 @@ in
   options.nico.discord.enable = lib.mkEnableOption "Enable Discord.";
 
   config = lib.mkIf cfg.enable {
-    programs.nixcord = {
-      enable = false;
-
-    };
     home.packages = with pkgs; [
       vesktop
     ];

@@ -27,6 +27,7 @@
     "${paths.nixos}/davinci.nix"
     "${paths.nixos}/productivity.nix"
     "${paths.nixos}/theme.nix"
+    "${paths.nixos}/basic.nix"
 
   ];
 
@@ -41,6 +42,7 @@
   davinci.enable = true;
   nico.productivity.enable = true;
   nico.theme.enable = true;
+  nico.basic.enable = true;
 
   environment.systemPackages = with pkgs; [
     nanorc
