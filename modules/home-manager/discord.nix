@@ -19,7 +19,7 @@ in
     programs.nixcord = {
       enable = true;
       discord.enable = true;
-      vesktop.enable = true;
+      #vesktop.enable = true;
     };
   };
 }
