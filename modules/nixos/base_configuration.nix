@@ -62,6 +62,52 @@ in
     ];
   };
 
+  #Set mount settings
+  fileSystems."/run/media/nico/40b9ab55-f044-4a52-84b6-b01f7dce6fb6" = {
+    device = "/dev/disk/by-uuid/40b9ab55-f044-4a52-84b6-b01f7dce6fb6";
+    fsType = "ext4";
+    options = [
+      "nofail"
+      "x-gvfs-show"
+    ];
+  };
+
+  fileSystems."/run/media/nico/SSD" = {
+    device = "/dev/disk/by-uuid/2A90ECC790EC9A99";
+    fsType = "ntfs";
+    options = [
+      "nofail"
+      "x-gvfs-show"
+    ];
+  };
+
+  fileSystems."/run/media/nico/HDD" = {
+    device = "/dev/disk/by-uuid/DC086035086010B6";
+    fsType = "ntfs";
+    options = [
+      "nofail"
+      "x-gvfs-show"
+    ];
+  };
+
+  fileSystems."/run/media/nico/2C9C73ED9C73B046" = {
+    device = "/dev/disk/by-uuid/2C9C73ED9C73B046";
+    fsType = "ntfs";
+    options = [
+      "nofail"
+      "x-gvfs-show"
+    ];
+  };
+
+  fileSystems."/run/media/nico/Games" = {
+    device = "/dev/disk/by-uuid/EE60124A60121A43";
+    fsType = "ntfs";
+    options = [
+      "nofail"
+      "x-gvfs-show"
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
     file
     nixfmt-rfc-style
