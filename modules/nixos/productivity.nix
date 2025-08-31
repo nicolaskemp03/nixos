@@ -22,6 +22,7 @@ in
       zotero
       kdePackages.francis
       pomodoro-gtk
+      yt-dlp
     ];
 
     hm.services.syncthing = {
