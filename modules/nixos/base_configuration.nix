@@ -123,6 +123,7 @@ in
     pavucontrol
     (import "${paths.derivations}/rebuild.nix" { inherit pkgs; })
     (import "${paths.derivations}/font-cache-update.nix" { inherit pkgs; })
+    jq
   ];
 
   environment.sessionVariables = {
