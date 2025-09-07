@@ -20,11 +20,6 @@
     "${paths.homeManager}/libreoffice.nix"
     "${paths.homeManager}/vscode/vscode.nix"
 
-    #Terminal and Coding
-    "${paths.homeManager}/shell/gitui.nix"
-    "${paths.homeManager}/shell/kitty.nix"
-    "${paths.homeManager}/shell/fish.nix"
-
   ];
 
   #Basic Apps
@@ -35,11 +30,6 @@
   nico.libreoffice.enable = true;
 
   #Terminal and Coding
-  nico.fish.enable = true;
-
-  nico.gitui.enable = true;
-  nico.kitty.enable = true;
-
   nico.vscode = {
     enable = true;
     #java = true;
