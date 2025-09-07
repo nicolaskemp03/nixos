@@ -28,6 +28,7 @@
     "${paths.nixos}/productivity.nix"
     "${paths.nixos}/theme.nix"
     "${paths.nixos}/basic.nix"
+    "${paths.nixos}/terminal.nix"
 
   ];
 
@@ -43,6 +44,7 @@
   nico.productivity.enable = true;
   nico.theme.enable = true;
   nico.basic.enable = true;
+  nico.terminal.enable = true;
 
   environment.systemPackages = with pkgs; [
     nanorc
