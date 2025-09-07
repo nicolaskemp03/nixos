@@ -11,8 +11,6 @@
   imports = [
 
     #System
-    "${paths.homeManager}/base_configuration.nix"
-    "${paths.homeManager}/git.nix"
 
     #Basic Apps
     "${paths.homeManager}/browser/firefox.nix"
@@ -23,16 +21,11 @@
     "${paths.homeManager}/vscode/vscode.nix"
 
     #Terminal and Coding
-    "${paths.homeManager}/shell/utils/shell-utils.nix"
     "${paths.homeManager}/shell/gitui.nix"
     "${paths.homeManager}/shell/kitty.nix"
     "${paths.homeManager}/shell/fish.nix"
-    "${paths.homeManager}/shell/warp.nix"
 
   ];
-
-  #System
-  nico.git.enable = true;
 
   #Basic Apps
   nico.firefox.enable = true;
@@ -43,8 +36,6 @@
 
   #Terminal and Coding
   nico.fish.enable = true;
-  nico.shell-utils.enable = true;
-  nico.warp-terminal.enable = true;
 
   nico.gitui.enable = true;
   nico.kitty.enable = true;
