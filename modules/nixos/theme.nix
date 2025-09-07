@@ -22,9 +22,10 @@ in
       targets.nixos-icons.enable = true;
     };
 
-    hm.stylix = {
-      targets.kitty.enable = true;
-      targets.vscode = {
+    hm.stylix.targets = {
+      kde.enable = true;
+      kitty.enable = true;
+      vscode = {
         enable = true;
         profileNames = [
           "default"
