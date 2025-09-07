@@ -20,7 +20,6 @@
 
     #Utilities and tools
     "${paths.homeManager}/libreoffice.nix"
-    "${paths.homeManager}/blender.nix"
     "${paths.homeManager}/vscode/vscode.nix"
 
     #Terminal and Coding
@@ -29,9 +28,6 @@
     "${paths.homeManager}/shell/kitty.nix"
     "${paths.homeManager}/shell/fish.nix"
     "${paths.homeManager}/shell/warp.nix"
-
-    #Gaming
-    "${paths.homeManager}/games/minecraft.nix"
 
   ];
 
@@ -43,7 +39,6 @@
   nico.discord.enable = true;
 
   #Utilities and Tools
-  nico.blender.enable = false;
   nico.libreoffice.enable = true;
 
   #Terminal and Coding
@@ -61,9 +56,6 @@
     #rust = true;
     #vim = true;
   };
-
-  #Gaming
-  nico.games.minecraft.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = "nico";

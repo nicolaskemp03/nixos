@@ -50,6 +50,20 @@ in
       };
     };
 
+    hm.programs.git = {
+      enable = true;
+      userName = "nico";
+      userEmail = "nicolaskemp03@proton.me";
+      extraConfig = {
+        init.defaultBranch = "main";
+        push.autoSetupRemote = true;
+      };
+    };
+
+    hm.home.packages = [
+      (import "${inputs.self}/derivations/git-clean-branches.nix" { inherit pkgs; })
+    ];
+
     #Notification to remind me to work
     services.cron.enable = true;
     services.cron.systemCronJobs = [

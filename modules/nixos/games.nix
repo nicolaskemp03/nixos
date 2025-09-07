@@ -46,6 +46,9 @@ in
       vkd3d-proton
       unstable.heroic
       lutris
+      prismlauncher
+      temurin-jre-bin
+
       #Emulation
     ];
 
