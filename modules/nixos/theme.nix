@@ -19,5 +19,6 @@ in
     stylix.targets.qt.enable = true;
     stylix.autoEnable = false;
     #hm.stylix.targets.vscode.enable = true;
+    hm.stylix.targets.kitty.enable = true;
   };
 }
