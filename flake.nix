@@ -118,6 +118,7 @@
       };
       homeConfigurations.nico = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
+          modules = [ stylix.homeModules.stylix ];
           system = "x86_64-linux";
           config.allowUnfree = true;
           overlays = [
