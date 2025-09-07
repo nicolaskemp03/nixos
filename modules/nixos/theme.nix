@@ -14,14 +14,17 @@ in
 
   config = lib.mkIf cfg.enable {
 
-    stylix.enable = true;
-    stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
-    stylix.targets.qt.enable = true;
-    stylix.autoEnable = false;
+    stylix = {
+      enable = true;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
+      targets.qt.enable = true;
+      autoEnable = false;
+      targets.nixos-icons.enable = true;
+    };
 
-    hm = {
-      stylix.targets.kitty.enable = true;
-      stylix.targets.vscode = {
+    hm.stylix = {
+      targets.kitty.enable = true;
+      targets.vscode = {
         enable = true;
         profileNames = [
           "default"
