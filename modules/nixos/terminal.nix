@@ -21,15 +21,11 @@ in
       tldr
       dust
       ripgrep
+      kitty
     ];
 
     hm = {
       programs.kitty.enable = true;
-      programs.kitty.extraConfig = ''
-        background_opacity 0.95
-        map ctrl+shift+f next_window
-        map ctrl+shift+b previous_window
-      '';
 
       programs.gitui = {
         enable = true;
