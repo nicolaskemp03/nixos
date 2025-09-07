@@ -18,7 +18,16 @@ in
     stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
     stylix.targets.qt.enable = true;
     stylix.autoEnable = false;
-    hm.stylix.targets.vscode.enable = true;
-    hm.stylix.targets.kitty.enable = true;
+
+    hm = {
+      stylix.targets.kitty.enable = true;
+      stylix.targets.vscode = {
+        enable = true;
+        profileNames = [
+          "default"
+        ];
+      };
+    };
+
   };
 }
