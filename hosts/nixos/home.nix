@@ -9,18 +9,12 @@
 {
 
   imports = [
-
-    #System
-
     #Basic Apps
     "${paths.homeManager}/browser/firefox.nix"
     "${paths.homeManager}/discord.nix"
 
     #Utilities and tools
     "${paths.homeManager}/libreoffice.nix"
-    "${paths.homeManager}/vscode/vscode.nix"
-    "${paths.homeManager}/vscode/vscode-vim.nix"
-
   ];
 
   #Basic Apps
@@ -29,15 +23,6 @@
 
   #Utilities and Tools
   nico.libreoffice.enable = true;
-
-  #Terminal and Coding
-  nico.vscode = {
-    enable = true;
-    #java = true;
-    #js = true;
-    #rust = true;
-    vim = true;
-  };
 
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = "nico";
