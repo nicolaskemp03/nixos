@@ -19,6 +19,7 @@
     #Utilities and tools
     "${paths.homeManager}/libreoffice.nix"
     "${paths.homeManager}/vscode/vscode.nix"
+    "${paths.homeManager}/vscode/vscode-vim.nix"
 
   ];
 
