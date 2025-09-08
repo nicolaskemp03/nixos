@@ -35,7 +35,7 @@
     #java = true;
     #js = true;
     #rust = true;
-    #vim = true;
+    vim = true;
   };
 
   # Home Manager needs a bit of information about you and the paths it should manage.
