@@ -34,6 +34,7 @@ in
   ];
 
   config = lib.mkIf cfg.enable {
+
     environment.systemPackages = with pkgs; [
       protontricks
       mangohud
@@ -65,17 +66,6 @@ in
 
     programs.gamemode.enable = true;
     programs.gamescope.enable = true;
-
-    age.secrets.playit-secret = {
-      file = ./secrets/playit-secret.age;
-    };
-
-    services.playit = {
-      enable = true;
-      user = "playit";
-      group = "playit";
-      secretPath = config.age.secrets.playit-secret.path;
-    };
 
   };
 }

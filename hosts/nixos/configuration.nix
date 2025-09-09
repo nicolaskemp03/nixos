@@ -29,7 +29,7 @@
     "${paths.nixos}/theme.nix"
     "${paths.nixos}/basic.nix"
     "${paths.nixos}/terminal.nix"
-
+    "${paths.nixos}/dev.nix"
   ];
 
   nico.gnome.enable = false;
@@ -45,6 +45,7 @@
   nico.theme.enable = true;
   nico.basic.enable = true;
   nico.terminal.enable = true;
+  nico.dev.enable = true;
 
   environment.systemPackages = with pkgs; [
     nanorc
@@ -112,4 +113,17 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
+
+  age.identityPaths = [ "/home/nico/.ssh/id_ed25519" ];
+
+  age.secrets.playit-secret = {
+    file = ./secrets/playit-secret.age;
+  };
+
+  services.playit = {
+    enable = true;
+    user = "playit";
+    group = "playit";
+    secretPath = config.age.secrets.playit-secret.path;
+  };
 }
