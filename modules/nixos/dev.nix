@@ -18,6 +18,18 @@ in
   config = lib.mkIf cfg.enable {
 
     hm = {
+
+      home.sessionVariables = {
+        "NIX_CONFIG_EDITOR" = "code-nw";
+      };
+
+      systemd.user.sessionVariables = {
+        "NIX_CONFIG_EDITOR" = "code-nw";
+      };
+      home.packages = [
+        (import "${inputs.self}/derivations/code-nw.nix" { inherit pkgs; })
+      ];
+
       programs.vscode = {
         enable = true;
         mutableExtensionsDir = true;
