@@ -57,6 +57,8 @@
     gopro-tool
     ffmpeg
     handbrake
+    python313Packages.manim
+    python313Full
   ];
   services.ratbagd.enable = true;
   users.users.nico.extraGroups = [ "docker" ];
