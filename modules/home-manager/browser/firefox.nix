@@ -53,6 +53,7 @@ in
             (extension "firefox-color" "FirefoxColor@mozilla.com")
             (extension "shortkeys" "Shortkeys@Shortkeys.com")
             (extension "yt-dlp-downloader" "yt_dlp_firefox@tyilo.com")
+            (extension "tile-tabs-we" "tiletabs-we@DW-dev")
           ]
           // {
             "*".installation_mode = "blocked";
@@ -168,7 +169,7 @@ in
           "extensions.pocket.enabled" = false;
 
           "browser.toolbars.bookmarks.visibility" = "never";
-          "browser.tabs.closeWindowWithLastTab" = true; # don't close the window when closing the last tab
+          "browser.tabs.closeWindowWithLastTab" = true;
           #"sidebar.visibility" = "hide-sidebar";
 
           "signon.rememberSignons" = false;
