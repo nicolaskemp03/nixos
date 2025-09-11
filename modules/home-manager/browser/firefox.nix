@@ -183,7 +183,7 @@ in
     };
 
     home.file = {
-      ".mozilla/firefox/${profile}/chrome".source = firefox-sidebar;
+      # ".mozilla/firefox/${profile}/chrome".source = firefox-sidebar;
       ".mozilla/firefox/${profile}/chrome/userChrome.css".source = ./userChrome.css;
       ".mozilla/firefox/${profile}/sidebery-data.json".source = ./sidebery-data.json;
       ".mozilla/firefox/nico/search.json.mozlz4".force = lib.mkForce true;
