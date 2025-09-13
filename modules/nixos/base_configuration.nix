@@ -148,7 +148,7 @@ in
       origin = "flathub";
     }
     {
-      appId = "app.zen_browser.zen_browser";
+      appId = "app.zen_browser.zen";
       origin = "flathub";
     }
     "com.dec05eba.gpu_screen_recorder"
