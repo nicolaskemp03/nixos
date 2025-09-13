@@ -147,6 +147,10 @@ in
       appId = "com.brave.Browser";
       origin = "flathub";
     }
+    {
+      appId = "app.zen_browser.zen_browser";
+      origin = "flathub";
+    }
     "com.dec05eba.gpu_screen_recorder"
 
   ];
