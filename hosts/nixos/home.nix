@@ -65,9 +65,39 @@
   services.vicinae = {
     enable = true; # default: false
     autoStart = true; # default: true
+    themes = {
+      "rose-pine-dawn" = {
+        version = "1.0.0";
+        appearance = "light"; # Rosé Pine Dawn es un tema claro.
+        name = "Rosé Pine Dawn";
+        # Asegúrate de que los colores y otros atributos coincidan exactamente
+        # con el archivo JSON del tema.
+        palette = {
+          # ... inserta aquí el resto del contenido del archivo JSON
+          base00 = "#faf4ed";
+          base01 = "#fffaf4";
+          base02 = "#f2e9e1";
+          base03 = "#d9d7ce";
+          base04 = "#6e6a86";
+          base05 = "#9893a5";
+          base06 = "#575279";
+          base07 = "#403d52";
+          base08 = "#b4637a";
+          base09 = "#ea9a97";
+          base0A = "#d7827e";
+          base0B = "#907aa9";
+          base0C = "#cecacd";
+          base0D = "#286983";
+          base0E = "#d57989";
+          base0F = "#56949f";
+          # ... y así sucesivamente
+        };
+        # Si el tema tiene otros campos, añádelos aquí.
+      };
+    };
     settings = {
       theme = {
-        name = "Rosé Pine Dawn";
+        name = "rose-pine-dawn";
       };
     };
   };
