@@ -62,6 +62,11 @@
     # '';
   };
 
+  services.vicinae = {
+    enable = true; # default: false
+    autoStart = true; # default: true
+  };
+
   home.activation = {
     pre-switch-clean = ''
       echo "Cleaning up conflicting gtkrc-2.0 file..."

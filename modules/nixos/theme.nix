@@ -2,8 +2,6 @@
   config,
   lib,
   pkgs,
-  hm,
-  home-manager,
   ...
 }:
 let

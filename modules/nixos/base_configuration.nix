@@ -168,6 +168,9 @@ in
       trashy
       vlc
     ];
+    imports = [
+      inputs.vicinae.homeManagerModules.default
+    ];
 
     xdg.desktopEntries = {
       "Rebuild" = {

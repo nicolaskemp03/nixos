@@ -22,6 +22,8 @@
       url = "github:kaylorben/nixcord";
     };
 
+    vicinae.url = "github:vicinaehq/vicinae";
+
     stylix = {
       url = "github:nix-community/stylix/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -56,6 +58,7 @@
       playit-nixos-module,
       agenix,
       stylix,
+      vicinae,
       ...
     }
 
@@ -115,31 +118,6 @@
             }
           ];
         };
-      };
-      homeConfigurations.nico = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          modules = [ stylix.homeModules.stylix ];
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-          overlays = [
-            (final: prev: {
-              unstable = pkgs-unstable;
-              vscode-marketplace = inputs.nix-vscode-extensions.extensions.${prev.system}.vscode-marketplace;
-            })
-          ];
-        };
-        extraSpecialArgs = {
-          inherit
-            inputs
-            paths
-            pkgs-unstable
-            home-manager
-            ; # Pass inputs and other useful args
-        };
-        modules = [
-          ./hosts/nixos/home.nix # <--- Your main Home Manager configuration file
-
-        ];
       };
     };
 }
