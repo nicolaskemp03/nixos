@@ -74,22 +74,14 @@
         # con el archivo JSON del tema.
         palette = {
           # ... inserta aquí el resto del contenido del archivo JSON
-          base00 = "#faf4ed";
-          base01 = "#fffaf4";
-          base02 = "#f2e9e1";
-          base03 = "#d9d7ce";
-          base04 = "#6e6a86";
-          base05 = "#9893a5";
-          base06 = "#575279";
-          base07 = "#403d52";
-          base08 = "#b4637a";
-          base09 = "#ea9a97";
-          base0A = "#d7827e";
-          base0B = "#907aa9";
-          base0C = "#cecacd";
-          base0D = "#286983";
-          base0E = "#d57989";
-          base0F = "#56949f";
+          background = "#faf4ed";
+          foreground = "#575279";
+          blue = "#286983";
+          green = "#56949f";
+          magenta = "#907aa9";
+          orange = "#ea9d34";
+          purple = "#d7827e";
+          muted = "#9893a5";
           # ... y así sucesivamente
         };
         # Si el tema tiene otros campos, añádelos aquí.
