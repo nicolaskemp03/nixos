@@ -64,35 +64,35 @@
   services.vicinae = {
     enable = true; # default: false
     autoStart = true; # default: true
-    /*
-      themes = {
-         "rose-pine-dawn" = {
-           version = "1.0.0";
-           appearance = "light"; # Rosé Pine Dawn es un tema claro.
-           name = "Rosé Pine Dawn";
-           # Asegúrate de que los colores y otros atributos coincidan exactamente
-           # con el archivo JSON del tema.
-           palette = {
-             # ... inserta aquí el resto del contenido del archivo JSON
-             background = "#faf4ed";
-             foreground = "#575279";
-             blue = "#286983";
-             green = "#56949f";
-             magenta = "#907aa9";
-             orange = "#ea9d34";
-             purple = "#d7827e";
-             muted = "#9893a5";
-             # ... y así sucesivamente
-           };
-           # Si el tema tiene otros campos, añádelos aquí.
-         };
-       };
-       settings = {
-         theme = {
-           name = "rose-pine-dawn";
-         };
-       };
-    */
+
+    themes = {
+      "rose-pine-dawn" = {
+        version = "1.0.0";
+        appearance = "light"; # Rosé Pine Dawn es un tema claro.
+        name = "Rosé Pine Dawn";
+        # Asegúrate de que los colores y otros atributos coincidan exactamente
+        # con el archivo JSON del tema.
+        palette = {
+          # ... inserta aquí el resto del contenido del archivo JSON
+          background = "#faf4ed";
+          foreground = "#575279";
+          blue = "#286983";
+          green = "#56949f";
+          magenta = "#907aa9";
+          orange = "#ea9d34";
+          purple = "#d7827e";
+          muted = "#9893a5";
+          # ... y así sucesivamente
+        };
+        # Si el tema tiene otros campos, añádelos aquí.
+      };
+    };
+    settings = {
+      theme = {
+        name = "rose-pine-dawn";
+      };
+    };
+
   };
 
   home.activation = {
