@@ -772,11 +772,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1757864751,
-        "narHash": "sha256-YootOkklKyBkJQqgo3jj+QQ1Gswf+i54FA513AfIYhU=",
+        "lastModified": 1758387475,
+        "narHash": "sha256-6b03npSQBOhyf16A8aP+w+b06YsgohB1fhUflNUaNxM=",
         "owner": "vicinaehq",
         "repo": "vicinae",
-        "rev": "eb86a82bf6f9ca7ef1fd974360a4a595d3d47ebc",
+        "rev": "b3f0fb971ffd69b060fcaf01bb9f3992eebf714c",
         "type": "github"
       },
       "original": {

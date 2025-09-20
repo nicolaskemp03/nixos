@@ -16,6 +16,7 @@ in
       displayManager.sddm.enable = true;
       displayManager.sddm.wayland.enable = true;
 
+      #kwallet.enable = true;
     };
     programs.ssh.askPassword = lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
     environment.systemPackages = [
