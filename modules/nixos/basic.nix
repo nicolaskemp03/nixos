@@ -14,7 +14,8 @@ in
   config = lib.mkIf cfg.enable {
 
     environment.systemPackages = with pkgs; [
-      unstable.ente-auth
+      ente-auth
+      ente-cli
       bitwarden-cli
     ];
 
