@@ -131,8 +131,15 @@ in
     NH_FLAKE = "/home/nico/nixos-config";
   };
 
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
   # Enable the gnome-keyring service
-  services.gnome.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring = {
+    enable = true;
+
+  };
 
   services.flatpak.enable = true;
   #flathub repository
