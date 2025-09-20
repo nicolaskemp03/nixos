@@ -131,6 +131,9 @@ in
     NH_FLAKE = "/home/nico/nixos-config";
   };
 
+  # Enable the gnome-keyring service
+  services.gnome.gnome-keyring.enable = true;
+
   services.flatpak.enable = true;
   #flathub repository
   systemd.services.flatpak-repo = {
