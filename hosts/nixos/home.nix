@@ -43,7 +43,6 @@
   home.packages = [
     pkgs.qbittorrent
     pkgs.finamp
-    pkgs.ente-auth
     pkgs.droidcam
   ];
 
