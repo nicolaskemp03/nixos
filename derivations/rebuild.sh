@@ -15,7 +15,7 @@ fi
 "${NIX_CONFIG_EDITOR:-${EDITOR:-vi}}" "$NH_FLAKE"
 
 # Early return if no changes were detected (thanks @singiamtel!)
-if [ -z "$(git status --porcelain)" ]; then
+if git add . && git diff --quiet && git diff --cached --quiet; then
     echo "No changes detected, exiting."
     popd
     exit 1
@@ -26,7 +26,7 @@ nixfmt . &>/dev/null \
 || ( nixfmt . ; echo "formatting failed!" && exit 1)
 
 # Shows your changes
-git diff HEAD
+git diff HEAD || true
 
 git add .
 

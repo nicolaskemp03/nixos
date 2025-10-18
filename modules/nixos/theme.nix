@@ -16,13 +16,14 @@ in
       enable = true;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
       targets.qt.enable = true;
-      autoEnable = false;
+      autoEnable = true;
       targets.nixos-icons.enable = true;
     };
 
     hm.stylix.targets = {
       kde.enable = true;
       kitty.enable = true;
+      nixcord.enable = false;
       vscode = {
         enable = true;
         profileNames = [

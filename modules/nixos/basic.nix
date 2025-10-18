@@ -17,6 +17,7 @@ in
       ente-auth
       ente-cli
       bitwarden-cli
+      vivaldi
     ];
 
   };

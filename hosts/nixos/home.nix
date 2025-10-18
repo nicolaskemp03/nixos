@@ -10,7 +10,6 @@
 
   imports = [
     #Basic Apps
-    "${paths.homeManager}/browser/firefox.nix"
     "${paths.homeManager}/discord.nix"
 
     #Utilities and tools
@@ -18,7 +17,6 @@
   ];
 
   #Basic Apps
-  nico.firefox.enable = true;
   nico.discord.enable = true;
 
   #Utilities and Tools

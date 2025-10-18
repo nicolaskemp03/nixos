@@ -121,10 +121,19 @@ in
     appimage-run
     mission-center
     pavucontrol
+    nvtopPackages.amd
+    btop
+    blueman
+    openrgb
     (import "${paths.derivations}/rebuild.nix" { inherit pkgs; })
     (import "${paths.derivations}/font-cache-update.nix" { inherit pkgs; })
     jq
   ];
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 
   environment.sessionVariables = {
     EDITOR = "nano";
@@ -147,16 +156,13 @@ in
     wantedBy = [ "multi-user.target" ];
     path = [ pkgs.flatpak ];
     script = ''
+
       flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     '';
   };
 
   #Flatpak packages to be installed
   services.flatpak.packages = [
-    {
-      appId = "com.brave.Browser";
-      origin = "flathub";
-    }
     {
       appId = "app.zen_browser.zen";
       origin = "flathub";

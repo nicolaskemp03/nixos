@@ -23,6 +23,8 @@ in
       kdePackages.francis
       pomodoro-gtk
       yt-dlp
+      thunderbird
+      localsend
     ];
 
     hm.services.syncthing = {
