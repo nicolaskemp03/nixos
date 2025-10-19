@@ -130,6 +130,8 @@ in
     jq
   ];
 
+  services.hardware.openrgb.enable = true;
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
