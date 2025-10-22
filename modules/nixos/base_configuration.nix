@@ -2,6 +2,7 @@
 {
   inputs,
   pkgs,
+  pkgs-unstable,
   lib,
   paths,
   ...
@@ -131,6 +132,7 @@ in
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
+    package = pkgs-unstable.bluez;
   };
 
   environment.sessionVariables = {
