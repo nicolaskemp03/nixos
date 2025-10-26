@@ -51,6 +51,7 @@ in
       temurin-jre-bin
 
       #Emulation
+      cemu
     ];
 
     programs.steam = {
