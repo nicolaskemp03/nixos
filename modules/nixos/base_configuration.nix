@@ -135,6 +135,30 @@ in
     package = pkgs-unstable.bluez;
   };
 
+  services.udev.extraRules = ''
+    # Add rules to ensure correct permissions for DS4
+    KERNEL=="hidraw*", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="05c4", MODE="0660", GROUP="input"
+    KERNEL=="hidraw*", ATTRS{idVendor}=="054c", ATTRS{idProduct}=="09cc", MODE="0660", GROUP="input"
+  '';
+
+  # ⚡️ FIX 1: Deshabilita el manejo de HID en userspace por parte de BlueZ
+  hardware.bluetooth.settings = {
+    General = {
+      # Use bredr (Classic Bluetooth) over LE, which is often more stable for DS4.
+      ControllerMode = "bredr";
+    };
+    Input = {
+      # This is the crucial fix for the disconnect bug in modern BlueZ versions.
+      UserspaceHID = false;
+    };
+  };
+
+  # ⚡️ FIX 2: Carga explícitamente los módulos del kernel para el controlador
+  boot.kernelModules = [
+    "hid-sony"
+    "hid_playstation"
+  ];
+
   environment.sessionVariables = {
     EDITOR = "nano";
     NH_FLAKE = "/home/nico/nixos-config";
