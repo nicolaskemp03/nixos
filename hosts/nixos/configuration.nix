@@ -53,7 +53,6 @@
     libsForQt5.xp-pen-deco-01-v2-driver
     piper
     unrar
-    python313Packages.ds4drv
     gopro-tool
     ffmpeg
     handbrake
@@ -61,7 +60,9 @@
     python313Full
   ];
   services.ratbagd.enable = true;
-  users.users.nico.extraGroups = [ "docker" ];
+  users.users.nico.extraGroups = [
+    "docker"
+  ];
   programs.obs-studio.enableVirtualCamera = true;
 
   # Bootloader.
