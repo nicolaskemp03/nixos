@@ -125,7 +125,6 @@ in
     pavucontrol
     nvtopPackages.amd
     btop
-    pkgs-unstable.python312Packages.ds4drv
     (import "${paths.derivations}/rebuild.nix" { inherit pkgs; })
     (import "${paths.derivations}/font-cache-update.nix" { inherit pkgs; })
     jq
